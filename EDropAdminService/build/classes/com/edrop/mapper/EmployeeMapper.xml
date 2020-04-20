@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.edrop.mapper.EmployeeMapper">
+<!-- 插入用户信息 -->
+	<insert id="insEmployeeInfo">
+		insert into employee values(default, #{param1}, #{param2}, #{param3}, #{param4}, #{param5}, #{param6}, #{param7}, #{param8})
+	</insert>
+	
+	<!-- id 查询员工 -->
+	<select id="selEmployeeInfoById" resultType="employee">
+		select * from employee where id=#{param1}
+	</select>
+</mapper>

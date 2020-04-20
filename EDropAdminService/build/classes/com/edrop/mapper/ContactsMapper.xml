@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.edrop.mapper.ContactsMapper">
+<!-- 联系人关系映射 -->
+	<resultMap type="contacts" id="selContact1">
+		<id property="id" column="id"/>
+		<result property="userId" column="userId"/>
+		<result property="employeeId" column="employeeId"/>
+		<association property="user" javaType="user" column="{id=userId}"
+		select="com.edrop.mapper.UserMapper.selUserInfoById"/>
+		<association property="employee" javaType="employee" column="{id=employeeId}"
+		select="com.edrop.mapper.EmployeeMapper.selEmployeeInfoById"/>
+	</resultMap>
+<!-- 查询联系人列表 -->
+	<select id="selContactByUserIdOrEmployeeId" resultMap="selContact1">
+		select id, userId, employeeId from contacts
+		<where>
+			<if test="param1 != null and param1 != ''">
+				and userId=#{param1}
+			</if>
+			<if test="param2 != null and param2 != ''">
+				and employeeId=#{param2}
+			</if>
+		</where>
+	</select>
+</mapper>
