@@ -1,5 +1,7 @@
 ﻿<!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
 <base href="http://localhost:8080/EDropAdminService/" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -19,7 +21,7 @@
 				dataType: "json",
 				success: function(msg){
 					if (msg.state == "success") {
-						$("#submitForm").attr("action", "index.html").submit();
+						$("#submitForm").attr("action", "html/index.html").submit();
 					} else if (msg.state == "fail"){
 						$("#login_err").text("用户名或者密码错误");
 					}
@@ -42,7 +44,7 @@
 				dataType: "json",
 				success: function(msg){
 					if (msg.state == "success") {
-						$("#submitForm").attr("action", "index.html").submit();
+						$("#submitForm").attr("action", "html/index.html").submit();
 					} else if (msg.state == "fail"){
 						$("#login_err").text("用户名或者密码错误");
 					}

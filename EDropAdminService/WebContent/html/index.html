@@ -1,13 +1,16 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
+ 	<base href="http://localhost:8080/EDropAdminService/" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>SCT-后台系统</title>
-	<link href="style/authority/main_css.css" rel="stylesheet" type="text/css" />
-	<link href="style/authority/zTreeStyle.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="scripts/jquery/jquery-1.7.1.js"></script>
-	<script type="text/javascript" src="scripts/zTree/jquery.ztree.core-3.2.js"></script>
-	<script type="text/javascript" src="scripts/authority/commonAll.js"></script>
+	<title>EDrop-后台管理系统</title>
+	<link href="html/style/authority/main_css.css" rel="stylesheet" type="text/css" />
+	<link href="html/style/authority/zTreeStyle.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="html/scripts/jquery/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="html/scripts/zTree/jquery.ztree.core-3.2.js"></script>
+	<script type="text/javascript" src="html/scripts/authority/commonAll.js"></script>
 	<script type="text/javascript">
 		/**退出系统**/
 		function logout(){
@@ -35,9 +38,9 @@
 			 if (ua.indexOf("360se") > -1){
 			  	art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'由于360浏览器功能限制，加入收藏夹功能失效', ok:true,});
 			 }else if (ua.indexOf("msie 8") > -1){
-			  	window.external.AddToFavoritesBar('${dynamicURL}/authority/loginInit.action','西宁市公共租赁住房信息管理系统管理');//IE8
+			  	window.external.AddToFavoritesBar('${dynamicURL}/authority/loginInit.action','EDrop后台信息管理系统');//IE8
 			 }else if (document.all){
-			  	window.external.addFavorite('${dynamicURL}/authority/loginInit.action','西宁市公共租赁住房信息管理系统管理');
+			  	window.external.addFavorite('${dynamicURL}/authority/loginInit.action','EDrop后台信息管理系统');
 			 }else{
 			  	art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'添加失败，请用ctrl+D进行添加', ok:true,});
 			 }
@@ -214,53 +217,31 @@
 					}
 				}
 			});*/
-            data = [{"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":3,"resourceName":"基础数据","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":37,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":19,"resourceName":"出租方设置","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":37,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":20,"resourceName":"租金评定设置","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":2,"resourceName":"摇号配租","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":16,"resourceName":"签约入住","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":24,"resourceName":"公租收费","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":34,"resourceName":"日常业务","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":55,"resourceName":"解约退租","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":30,"resourceName":"统计报表","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":37,"resourceName":"系统参数","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":31,"resourceName":"公租房楼盘表概况","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":44,"resourceName":"退租申请","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":24,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":26,"resourceName":"日常合同扣租","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":16,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":17,"resourceName":"通知书审核","resourceOrder":0,"resourceType":""},
-            {"accessPath":"house_list.html","checked":false,"delFlag":0,"parentID":3,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":7,"resourceName":"房源管理","resourceOrder":0,"resourceType":""},
-            {"accessPath":"loupanchart.html","checked":false,"delFlag":0,"parentID":3,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":8,"resourceName":"承租方管理","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":2,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":5,"resourceName":"房源导出","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":16,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":18,"resourceName":"电子合同管理","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":24,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":59,"resourceName":"日常合同续费","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":34,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":35,"resourceName":"房屋资产盘查","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":45,"resourceName":"物业结算","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":46,"resourceName":"公租房租赁变动概况","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":47,"resourceName":"公租房增减变动情况","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":43,"resourceName":"退租验房","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":34,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":36,"resourceName":"园区企业盘查","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":24,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":42,"resourceName":"维修费用审核","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":16,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":33,"resourceName":"租金核算","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":2,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":6,"resourceName":"租户导出","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":3,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":32,"resourceName":"家庭成员管理","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":3,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":39,"resourceName":"施工单位管理","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":2,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":9,"resourceName":"配租导入","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":16,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":52,"resourceName":"租金缴费","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":24,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":25,"resourceName":"租金费用调整","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":34,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":51,"resourceName":"园区企业查询","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":29,"resourceName":"清账核算","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":50,"resourceName":"公租房租金收入概况","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":37,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":38,"resourceName":"维修单位设置","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":48,"resourceName":"个人缴费记录","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":24,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":53,"resourceName":"维修费用报销","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":16,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":40,"resourceName":"入住验房","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":16,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":41,"resourceName":"入住确认","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":24,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":56,"resourceName":"租金调整审核","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":49,"resourceName":"房租缴纳明细","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":28,"resourceName":"合同解约","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":54,"resourceName":"财务清账","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":16,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":60,"resourceName":"合同续订","resourceOrder":0,"resourceType":""},
-            {"accessPath":"","checked":false,"delFlag":0,"parentID":16,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":58,"resourceName":"合同查询","resourceOrder":0,"resourceType":""}];
+			 data = [{"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":3,"resourceName":"用户管理","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":37,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":19,"resourceName":"出租方设置","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":37,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":20,"resourceName":"租金评定设置","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":2,"resourceName":"工作人员管理","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":16,"resourceName":"订单管理","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":24,"resourceName":"数据库管理","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":34,"resourceName":"管理员","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":55,"resourceName":"社区管理","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":30,"resourceName":"数据可视化","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":31,"resourceName":"用户量","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":44,"resourceName":"添加文章","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":24,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":26,"resourceName":"添加垃圾信息","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"house_list.html","checked":false,"delFlag":0,"parentID":16,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":17,"resourceName":"所有订单","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"user/list","checked":false,"delFlag":0,"parentID":3,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":7,"resourceName":"用户信息","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"house_list.html","checked":false,"delFlag":0,"parentID":2,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":5,"resourceName":"工作人员信息","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":24,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":59,"resourceName":"查找垃圾信息","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":34,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":35,"resourceName":"添加敏感词","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":45,"resourceName":"文章管理","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":46,"resourceName":"订单量","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":47,"resourceName":"日活用户","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":43,"resourceName":"推送信息","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":34,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":36,"resourceName":"添加管理员","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":3,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":32,"resourceName":"反馈处理","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":34,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":51,"resourceName":"管理员信息","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":29,"resourceName":"定时任务","resourceOrder":0,"resourceType":""}];
             // 如果返回数据不为空，加载"业务模块"目录
             if(data != null){
                 // 将返回的数据赋给zTree
@@ -289,28 +270,28 @@
 <body onload="getDate01()">
     <div id="top">
 		<div id="top_logo">
-			<img alt="logo" src="images/common/logo.jpg" width="274" height="49" style="vertical-align:middle;">
+			<img alt="logo" src="html/images/common/logo.jpg" width="274" height="49" style="vertical-align:middle;">
 		</div>
 		<div id="top_links">
 			<div id="top_op">
 				<ul>
 					<li>
-						<img alt="当前用户" src="images/common/user.jpg">：
+						<img alt="当前用户" src="html/images/common/user.jpg">：
 						<span>admin</span>
 					</li>
 					<li>
-						<img alt="事务月份" src="images/common/month.jpg">：
+						<img alt="事务月份" src="html/images/common/month.jpg">：
 						<span id="yue_fen"></span>
 					</li>
 					<li>
-						<img alt="今天是" src="images/common/date.jpg">：
+						<img alt="今天是" src="html/images/common/date.jpg">：
 						<span id="day_day"></span>
 					</li>
 				</ul> 
 			</div>
 			<div id="top_close">
 				<a href="javascript:void(0);" onclick="logout();" target="_parent">
-					<img alt="退出系统" title="退出系统" src="images/common/close.jpg" style="position: relative; top: 10px; left: 25px;">
+					<img alt="退出系统" title="退出系统" src="html/images/common/close.jpg" style="position: relative; top: 10px; left: 25px;">
 				</a>
 			</div>
 		</div>
@@ -320,26 +301,26 @@
 		<div id="left_menu">
 		 	<ul id="TabPage2" style="height:200px; margin-top:50px;">
 				<li id="left_tab1" class="selected" onClick="javascript:switchTab('TabPage2','left_tab1');" title="业务模块">
-					<img alt="业务模块" title="业务模块" src="images/common/1_hover.jpg" width="33" height="31">
+					<img alt="业务模块" title="业务模块" src="html/images/common/1_hover.jpg" width="33" height="31">
 				</li>
 				<li id="left_tab2" onClick="javascript:switchTab('TabPage2','left_tab2');" title="系统管理">
-					<img alt="系统管理" title="系统管理" src="images/common/2.jpg" width="33" height="31">
+					<img alt="系统管理" title="系统管理" src="html/images/common/2.jpg" width="33" height="31">
 				</li>		
 				<li id="left_tab3" onClick="javascript:switchTab('TabPage2','left_tab3');" title="其他">
-					<img alt="其他" title="其他" src="images/common/3.jpg" width="33" height="31">
+					<img alt="其他" title="其他" src="html/images/common/3.jpg" width="33" height="31">
 				</li>
 			</ul>
 			
 			
 			<div id="nav_show" style="position:absolute; bottom:0px; padding:10px;">
 				<a href="javascript:;" id="show_hide_btn">
-					<img alt="显示/隐藏" title="显示/隐藏" src="images/common/nav_hide.png" width="35" height="35">
+					<img alt="显示/隐藏" title="显示/隐藏" src="html/images/common/nav_hide.png" width="35" height="35">
 				</a>
 			</div>
 		 </div>
 		 <div id="left_menu_cnt">
 		 	<div id="nav_module">
-		 		<img src="images/common/module_1.png" width="210" height="58"/>
+		 		<img src="html/images/common/module_1.png" width="210" height="58"/>
 		 	</div>
 		 	<div id="nav_resource">
 		 		<ul id="dleft_tab1" class="ztree"></ul>
@@ -350,12 +331,12 @@
 		$(function(){
 			$('#TabPage2 li').click(function(){
 				var index = $(this).index();
-				$(this).find('img').attr('src', 'images/common/'+ (index+1) +'_hover.jpg');
+				$(this).find('img').attr('src', 'html/images/common/'+ (index+1) +'_hover.jpg');
 				$(this).css({background:'#fff'});
-				$('#nav_module').find('img').attr('src', 'images/common/module_'+ (index+1) +'.png');
+				$('#nav_module').find('img').attr('src', 'html/images/common/module_'+ (index+1) +'.png');
 				$('#TabPage2 li').each(function(i, ele){
 					if( i!=index ){
-						$(ele).find('img').attr('src', 'images/common/'+ (i+1) +'.jpg');
+						$(ele).find('img').attr('src', 'html/images/common/'+ (i+1) +'.jpg');
 						$(ele).css({background:'#044599'});
 					}
 				});
@@ -384,13 +365,13 @@
 					side.css({width:'60px'});
 		        	$('#top_nav').css({width:'100%', left:'60px', 'padding-left':'28px'});
 		        	$('#main').css({left:'60px'});
-		        	$("#show_hide_btn").find('img').attr('src', 'images/common/nav_show.png');
+		        	$("#show_hide_btn").find('img').attr('src', 'html/images/common/nav_show.png');
 		        } else {
 					left_menu_cnt.show(500, 'linear');
 					side.css({width:'280px'});
 					$('#top_nav').css({width:'77%', left:'304px', 'padding-left':'0px'});
 		        	$('#main').css({left:'280px'});
-		        	$("#show_hide_btn").find('img').attr('src', 'images/common/nav_hide.png');
+		        	$("#show_hide_btn").find('img').attr('src', 'html/images/common/nav_hide.png');
 		        }
 			}
 		}
@@ -400,7 +381,7 @@
 	 	<span id="here_area">当前位置：系统&nbsp;>&nbsp;系统介绍</span>
 	</div>
     <div id="main">
-      	<iframe name="right" id="rightMain" src="introduce.html" frameborder="no" scrolling="auto" width="100%" height="100%" allowtransparency="true"/>
+      	<iframe name="right" id="rightMain" src="html/introduce.html" frameborder="no" scrolling="auto" width="100%" height="100%" allowtransparency="true"/>
     </div>
 
 </body>

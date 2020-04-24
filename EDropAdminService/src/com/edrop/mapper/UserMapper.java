@@ -9,6 +9,7 @@
 package com.edrop.mapper;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import org.apache.ibatis.annotations.Select;
 
@@ -43,4 +44,7 @@ public interface UserMapper {
 
 	//id 查询用户信息
 	public User selUserInfoById(Integer id);
+	
+	//查询所有的用户信息
+	public List<User> selectAllUser();
 }

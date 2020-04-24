@@ -50,4 +50,9 @@
 	 	</set>
 	 	where id = #{param1}
 	</update>
+	
+	<select id="selectAllUser" resultType="com.edrop.pojo.User">
+		select *
+		from user
+	</select>
 </mapper>
