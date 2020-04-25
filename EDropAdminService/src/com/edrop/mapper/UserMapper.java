@@ -11,6 +11,7 @@ package com.edrop.mapper;
 import java.sql.Timestamp;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import com.edrop.pojo.User;
@@ -46,5 +47,5 @@ public interface UserMapper {
 	public User selUserInfoById(Integer id);
 	
 	//查询所有的用户信息
-	public List<User> selectAllUser();
+	public List<User> selectAllUser(@Param("username")String username,@Param("phone")String phone);
 }

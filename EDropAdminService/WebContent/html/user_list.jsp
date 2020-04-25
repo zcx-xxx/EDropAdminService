@@ -18,6 +18,25 @@
 <script type="text/javascript" src="html/scripts/artDialog/artDialog.js?skin=default"></script>
 <title>信息管理系统</title>
 <script type="text/javascript">
+	$(function(){
+		// 登录
+		$("#find_user").click(function(){
+			var username = $("#username").val();
+			var phone = $("#phone").val();
+			$.ajax({
+				type: "POST",
+				url: "user/find",
+				data: "username=" + username + "&phone=" + phone,
+				dataType : "html",
+				cache:false,
+				success : function(dates){
+					$("#updatediv").html(dates);//要刷新的div
+					
+				},
+				 error:function(error){alert(error);}
+			});
+	    })
+	})
 	$(document).ready(function(){
 		/** 新增   **/
 	    $("#addBtn").fancybox({
@@ -59,11 +78,6 @@
 	});
 	/** 用户角色   **/
 	var userRole = '';
-
-	/** 模糊查询来电用户  **/
-	function search(){
-		$("#submitForm").attr("action", "house_list.html?page=" + 1).submit();
-	}
 
 	/** 新增   **/
 	function add(){
@@ -156,52 +170,18 @@
 </style>
 </head>
 <body>
-	<form id="submitForm" name="submitForm" action="" method="post">
-		<input type="hidden" name="allIDCheck" value="" id="allIDCheck"/>
-		<input type="hidden" name="fangyuanEntity.fyXqName" value="" id="fyXqName"/>
+	<form id="submitForm" name="submitForm" action="" method="post"  id="finddiv">
 		<div id="container">
 			<div class="ui_content">
 				<div class="ui_text_indent">
 					<div id="box_border">
 						<div id="box_top">搜索</div>
 						<div id="box_center">
-							小区
-							<select name="fangyuanEntity.fyXqCode" id="fyXq" class="ui_select01" onchange="getFyDhListByFyXqCode();">
-                                <option value=""
-                                >--请选择--</option>
-                                <option value="6">瑞景河畔</option>
-                                <option value="77">蔚蓝小区</option>
-                                <option value="83">和盛园小区</option>
-                            </select>
-
-							栋号
-							<select name="fangyuanEntity.fyDhCode" id="fyDh" class="ui_select01">
-                                <option value="">--请选择--</option>
-                            </select>
-							户型
-							<select name="fangyuanEntity.fyHxCode" id="fyHx" class="ui_select01">
-                                <option value="">--请选择--</option>
-                                <option value="76">一室一厅一卫</option>
-                                <option value="10">两室一厅一卫</option>
-                                <option value="14">三室一厅一卫</option>
-                                <option value="71">三室两厅一卫</option>
-                            </select>
-							状态
-							<select name="fangyuanEntity.fyStatus" id="fyStatus" class="ui_select01">
-                                <option value="">--请选择--</option>
-                                <option value="26">在建</option>
-                                <option value="25">建成待租</option>
-                                <option value="13">已配租</option>
-                                <option value="12">已租赁</option>
-                                <option value="24">腾退待租</option>
-                                <option value="23">欠费</option>
-                                <option value="27">其他</option>
-                            </select>
-
-							座落&nbsp;&nbsp;<input type="text" id="fyZldz" name="fangyuanEntity.fyZldz" class="ui_input_txt02" />
+							用户名&nbsp;&nbsp;<input type="text" id="username" name="username" class="ui_input_txt02" />
+							电话&nbsp;&nbsp;<input type="text" id="phone" name="phone" class="ui_input_txt02" />
 						</div>
 						<div id="box_bottom">
-							<input type="button" value="查询" class="ui_input_btn01" onclick="search();" /> 
+							<input type="button" value="查询" class="ui_input_btn01" id="find_user"/> 
 							<input type="button" value="新增" class="ui_input_btn01" id="addBtn" /> 
 							<input type="button" value="删除" class="ui_input_btn01" onclick="batchDel();" /> 
 							<input type="button" value="导入" class="ui_input_btn01" id="importBtn" />
@@ -210,13 +190,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="ui_content">
-				<div class="ui_tb">
+			<div class="ui_content" id="updatediv">
+				<div class="ui_tb" >
 					<table class="table" cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
 						<tr>
 							<th width="30"><input type="checkbox" id="all" onclick="selectOrClearAllCheckbox(this);" />
 							</th>
-							<th>姓名</th>
+							<th>用户名</th>
 							<th>电话</th>
 							<th>地址</th>
 							<th>详细地址</th>
@@ -263,8 +243,6 @@
 							</c:if>
 							<input type="button" value="尾页" class="ui_input_btn01"
 								onclick="jumpNormalPage(${pageInfo.pages });" />
-						<!--     如果是最后一页，则只显示首页、上一页 -->
-			
 					</div>
 				</div>
 			</div>

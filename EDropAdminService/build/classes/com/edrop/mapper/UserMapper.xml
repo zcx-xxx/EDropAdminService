@@ -54,5 +54,14 @@
 	<select id="selectAllUser" resultType="com.edrop.pojo.User">
 		select *
 		from user
+		<where>
+			<if test="username != '' and username != null">
+				and username like concat('%','${username}','%')
+			</if>
+			<if test="phone != '' and phone != null">
+				and phone like concat('%','${phone}','%')
+			</if>
+		</where>
+		
 	</select>
 </mapper>

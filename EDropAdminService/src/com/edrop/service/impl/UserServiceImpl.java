@@ -17,11 +17,11 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserMapper userMapper;
 	
-	public PageInfo<User> getAllUser(Integer page,Integer size){
+	public PageInfo<User> getAllUser(String username,String phone,Integer page,Integer size){
 		
 		PageHelper.startPage(page,size);
 		
-		List<User> users =  userMapper.selectAllUser();
+		List<User> users =  userMapper.selectAllUser(username,phone);
 		PageInfo<User> info = new PageInfo<User>(users);
 		
 		return info;
