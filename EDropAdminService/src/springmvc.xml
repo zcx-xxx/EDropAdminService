@@ -23,7 +23,7 @@
     <!--    视图解析器-->
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/html/"></property>
-        <property name="suffix" value=".html"></property>
+        <property name="suffix" value=".jsp"></property>
     </bean>
 
     <!--    处理文件上传-->

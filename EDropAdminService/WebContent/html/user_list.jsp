@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
@@ -50,7 +53,7 @@
 	        'hideOnOverlayClick' : false,
 	        'showCloseButton' : false,
 	        'onClosed' : function() { 
-	        	window.location.href = 'house_list.html';
+	        	window.location.href = 'html/house_list.jsp';
 	        }
 	    });
 	});
@@ -127,7 +130,7 @@
 
 	/** 普通跳转 **/
 	function jumpNormalPage(page){
-		$("#submitForm").attr("action", "house_list.html?page=" + page).submit();
+		$("#submitForm").attr("action", "user/list?page=" + page).submit();
 	}
 	
 	/** 输入页跳转 **/
@@ -140,11 +143,11 @@
 				art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'请输入合适的页数，\n自动为您跳到首页', ok:true,});
 				pageNum = 1;
 			}
-			$("#submitForm").attr("action", "house_list.html?page=" + pageNum).submit();
+			$("#submitForm").attr("action", "user/list?page=" + pageNum).submit();
 		}else{
 			// “跳转页数”为空
 			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'请输入合适的页数，\n自动为您跳到首页', ok:true,});
-			$("#submitForm").attr("action", "house_list.html?page=" + 1).submit();
+			$("#submitForm").attr("action", "user/list?page=" + 1).submit();
 		}
 	}
 </script>
@@ -221,48 +224,47 @@
 							<th>注册时间</th>
 							<th>操作</th>
 						</tr>
-							<tr th:each="p:${pageInfo.list}">
-								<td><input type="checkbox" name="IDCheck" value="14458579642011" class="acb" /></td>
-								<td th:text="${p.username}"></td>
-								<td th:text="${p.phone}"></td>
-								<td th:text="${p.address}"></td>
-								<td th:text="${p.detailAddress}"></td>
-								<td th:text="${p.gender}"></td>
-								<td th:text="${p.registerTime}"></td>
-								<td>
-									<a href="house_edit.html?fyID=14458579642011" class="edit">编辑</a> 
-									<a href="javascript:del('14458579642011');">删除</a>
+						<c:forEach items="${pageInfo.list }" var="p">
+							<tr>
+								<td><input type="checkbox" name="IDCheck"
+									value="14458579642011" class="acb" /></td>
+								<td>${p.username }</td>
+								<td>${p.phone }</td>
+								<td>${p.address }</td>
+								<td>${p.detailAddress }</td>
+								<td>${p.gender }</td>
+								<td>${p.registerTime }</td>
+								<td><a href="house_edit.html?fyID=14458579642011"
+									class="edit">编辑</a> <a href="javascript:del('14458579642011');">删除</a>
 								</td>
 							</tr>
-						
+						</c:forEach>
+
 					</table>
 				</div>
 				<div class="ui_tb_h30">
 					<div class="ui_flt" style="height: 30px; line-height: 30px;">
 						共有
-						<span class="ui_txt_bold04">90</span>
+						<span class="ui_txt_bold04">${pageInfo.total }</span>
 						条记录，当前第
-						<span class="ui_txt_bold04">1
+						<span class="ui_txt_bold04">${pageInfo.pageNum }
 						/
-						9</span>
+						${pageInfo.pages }</span>
 						页
 					</div>
 					<div class="ui_frt">
 						<!--    如果是第一页，则只显示下一页、尾页 -->
-						
-							<input type="button" value="首页" class="ui_input_btn01" />
-							<input type="button" value="上一页" class="ui_input_btn01" />
-							<input type="button" value="下一页" class="ui_input_btn01"
-								onclick="jumpNormalPage(2);" />
+							<input type="button" value="首页" class="ui_input_btn01" onclick="jumpNormalPage(1);"/>
+							<c:if test="${pageInfo.pageNum > 1 }">
+								<input type="button" value="上一页" class="ui_input_btn01" onclick="jumpNormalPage(${pageInfo.pageNum-1 });" />
+							</c:if>
+							<c:if test="${pageInfo.pageNum < pageInfo.pages }">
+								<input type="button" value="下一页" class="ui_input_btn01" onclick="jumpNormalPage(${pageInfo.pageNum+1 });" />
+							</c:if>
 							<input type="button" value="尾页" class="ui_input_btn01"
-								onclick="jumpNormalPage(9);" />
-						
-						
-						
+								onclick="jumpNormalPage(${pageInfo.pages });" />
 						<!--     如果是最后一页，则只显示首页、上一页 -->
-						
-						转到第<input type="text" id="jumpNumTxt" class="ui_input_txt01" />页
-							 <input type="button" class="ui_input_btn01" value="跳转" onclick="jumpInputPage(9);" />
+			
 					</div>
 				</div>
 			</div>

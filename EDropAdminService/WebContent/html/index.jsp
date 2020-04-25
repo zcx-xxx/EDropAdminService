@@ -229,9 +229,9 @@
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":31,"resourceName":"用户量","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":44,"resourceName":"添加文章","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":24,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":26,"resourceName":"添加垃圾信息","resourceOrder":0,"resourceType":""},
-		            {"accessPath":"house_list.html","checked":false,"delFlag":0,"parentID":16,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":17,"resourceName":"所有订单","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"user/list","checked":false,"delFlag":0,"parentID":16,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":17,"resourceName":"所有订单","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"user/list","checked":false,"delFlag":0,"parentID":3,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":7,"resourceName":"用户信息","resourceOrder":0,"resourceType":""},
-		            {"accessPath":"house_list.html","checked":false,"delFlag":0,"parentID":2,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":5,"resourceName":"工作人员信息","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"user/list","checked":false,"delFlag":0,"parentID":2,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":5,"resourceName":"工作人员信息","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":24,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":59,"resourceName":"查找垃圾信息","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":34,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":35,"resourceName":"添加敏感词","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":45,"resourceName":"文章管理","resourceOrder":0,"resourceType":""},
@@ -244,7 +244,7 @@
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":29,"resourceName":"定时任务","resourceOrder":0,"resourceType":""}];
             // 如果返回数据不为空，加载"业务模块"目录
             if(data != null){
-                // 将返回的数据赋给zTree
+                // 将返回的数据赋给zTree 
                 $.fn.zTree.init($("#"+treeObj), setting, data);
 //              alert(treeObj);
                 zTree = $.fn.zTree.getZTreeObj(treeObj);
