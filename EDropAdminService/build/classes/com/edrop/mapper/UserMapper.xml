@@ -8,47 +8,35 @@
 
 	<!-- id 查询用户信息 -->
 	<select id="selUserInfoById" resultType="user">
-		select * from user where id = #{param1}
+		select * from user where id = #{id}
 	</select>
 	<!-- 插入用户信息 -->
 	<insert id="insUserInfo">
-		insert into user values(default, #{param1}, #{param2}, #{param3}, #{param4}, #{param5}, #{param6}, #{param7}, #{param8}, #{param9}, #{param10})
+		insert into user(phone,username,password,imgpath,imgname,address,detailAddress,gender,registerTime) 
+		values(#{phone}, #{username}, #{password}, #{imgpath},#{imgname},#{address}, #{detailAddress}, #{gender}, #{registerTime})
 	</insert>
 	
-	<!-- 跟新用户数据 -->
+	<!-- 更新用户数据 -->
 	<update id="upUserInfo">
 		update user
 	 	<set>
-	 		id = #{param1},
-	 		<if test="param2 != '' and param2 != null">
-	 			phone = #{param2},
+	 		<if test="phone != '' and phone != null">
+	 			phone = #{phone},
 	 		</if>
-	 		<if test="param3 != '' and param3 != null">
-	 			qq = #{param3},
+	 		<if test="username != '' and username != null">
+	 			username = #{username},
 	 		</if>
-	 		<if test="param4 != '' and param4 != null">
-	 			username = #{param4},
+	 		<if test="address != '' and address != null">
+	 			address = #{address},
 	 		</if>
-	 		<if test="param5 != '' and param5 != null">
-	 			password = #{param5},
+	 		<if test="gender != '' and gender != null">
+	 			gender = #{gender},
 	 		</if>
-	 		<if test="param6 != '' and param6 != null">
-	 			imgpath = #{param6},
-	 		</if>
-	 		<if test="param7 != '' and param7 != null">
-	 			imgname = #{param7},
-	 		</if>
-	 		<if test="param8 != '' and param8 != null">
-	 			address = #{param8},
-	 		</if>
-	 		<if test="param9 != '' and param9 != null">
-	 			gender = #{param9},
-	 		</if>
-	 		<if test="param10 != '' and param10 != null">
-	 			detailAddress = #{param10},
+	 		<if test="detailAddress != '' and detailAddress != null">
+	 			detailAddress = #{detailAddress},
 	 		</if>
 	 	</set>
-	 	where id = #{param1}
+	 	where id = #{id}
 	</update>
 	
 	<select id="selectAllUser" resultType="com.edrop.pojo.User">
@@ -64,4 +52,6 @@
 		</where>
 		
 	</select>
+
+	
 </mapper>

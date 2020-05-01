@@ -112,7 +112,7 @@ a:hover {
 }
 
 .ui_select01 {
-	width: 120px;
+	width: 50px;
 	height: 30px;
 	margin: 2px 2px 2px 5px;
 }
@@ -124,7 +124,7 @@ a:hover {
 }
 
 .ui_input_txt01 {
-	width: 25px;
+	width: 90px;
 	height: 16px;
 	margin: 1px 1px 1px 5px;
 	outline: 0;

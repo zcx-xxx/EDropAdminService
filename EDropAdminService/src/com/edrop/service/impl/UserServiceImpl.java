@@ -26,4 +26,20 @@ public class UserServiceImpl implements UserService {
 		
 		return info;
 	}
+
+	
+	public void insertUser(String username, String phone, String address, String detailAddress, String gender,
+			String registerTime) {
+		String defaultPasswordString = "e10adc3949ba59abbe56e057f20f883e";
+		userMapper.insUserInfo(phone, username, defaultPasswordString, "/img", "defaulthead.jpg", address, detailAddress, gender, registerTime);
+	}
+
+
+	public User findUserByName(String username) {
+		return userMapper.selUserByUsername(username);
+	}
+
+	public void updateUser(Integer id,String username, String phone, String address, String detailAddress, String gender) {
+		userMapper.upUserInfo(id, phone, username, address, detailAddress, gender);		
+	}
 }

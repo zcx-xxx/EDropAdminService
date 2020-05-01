@@ -37,15 +37,16 @@ public interface UserMapper {
 	@Select("select * from user where qq like #{param1}")
 	public User selUserByQq(String qq);
 
-	//跟新用户信息
-	public int upUserInfo(Integer id, String phone, String qq, String username, String password, String imgpath, String imgname, String address, String gender, String detailAddress);
+	//更新用户信息
+	public int upUserInfo(@Param("id")Integer id,@Param("phone")String phone, @Param("username")String username, @Param("address")String address, @Param("detailAddress")String detailAddress, @Param("gender")String gender);
 	
 	//插入用户数据
-	public int insUserInfo(String phone, String qq, String username, String password, String imgpath, String imgname, String address, String detailAddress, String gender, Timestamp registerTime);
+	public int insUserInfo(@Param("phone")String phone, @Param("username")String username, @Param("password")String password, @Param("imgpath")String imgpath, @Param("imgname")String imgname, @Param("address")String address, @Param("detailAddress")String detailAddress, @Param("gender")String gender, @Param("registerTime")String registerTime);
 
 	//id 查询用户信息
-	public User selUserInfoById(Integer id);
-	
+	public User selUserInfoById(String id);
+		
 	//查询所有的用户信息
 	public List<User> selectAllUser(@Param("username")String username,@Param("phone")String phone);
+	
 }

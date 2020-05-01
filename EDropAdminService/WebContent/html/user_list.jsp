@@ -40,14 +40,14 @@
 	$(document).ready(function(){
 		/** 新增   **/
 	    $("#addBtn").fancybox({
-	    	'href'  : 'house_edit.html',
+	    	'href'  : 'html/user_add.jsp',
 	    	'width' : 733,
 	        'height' : 530,
 	        'type' : 'iframe',
 	        'hideOnOverlayClick' : false,
 	        'showCloseButton' : false,
 	        'onClosed' : function() { 
-	        	window.location.href = 'house_list.html';
+	        	window.location.href = 'user/list';
 	        }
 	    });
 		
@@ -214,7 +214,7 @@
 								<td>${p.detailAddress }</td>
 								<td>${p.gender }</td>
 								<td>${p.registerTime }</td>
-								<td><a href="house_edit.html?fyID=14458579642011"
+								<td><a href="user/edit?username=${p.username }"
 									class="edit">编辑</a> <a href="javascript:del('14458579642011');">删除</a>
 								</td>
 							</tr>
