@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.edrop.mapper.UserOperationStatisticsMapper">
+	<resultMap type="userOperationStatistics" id="userOperationStatisticsMap">
+		<id column="id" property="id"/>
+		<result column="year" property="year"/>
+		<result column="month" property="month"/>
+		<result column="day" property="day"/>
+		<result column="user_or_employee" property="userOrEmployee"/>
+		<result column="login_or_register" property="loginOrRegister"/>
+		<result column="total_operation_times" property="totalOperationTimes"/>
+	</resultMap>
+	<!-- 通过 year 查询用户操作  -->
+	<select id="selectUserOperationDataByYear" resultMap="userOperationStatisticsMap">
+		select * from user_operation_statistics where year=#{year} 
+		and user_or_employee like #{userOrEmployee} and login_or_register like #{loginOrRegister}
+	</select>
+	
+	<!-- 通过全字段查询 -->
+	<select id="selectRowByAllColumn" resultMap="userOperationStatisticsMap">
+		select * from user_operation_statistics where year=#{year} and month=#{month} and day=#{day}
+		and user_or_employee like #{userOrEmployee} and login_or_register like #{loginOrRegister}
+	</select>
+</mapper>

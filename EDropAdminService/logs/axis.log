@@ -1,0 +1,3 @@
+4662 [main] DEBUG com.edrop.mapper.UserOperationStatisticsMapper.selectUserOperationDataByYear  - ==>  Preparing: select * from user_operation_statistics where year=? and user_or_employee like ? and login_or_register like ? 
+4701 [main] DEBUG com.edrop.mapper.UserOperationStatisticsMapper.selectUserOperationDataByYear  - ==> Parameters: 2020(Integer), user(String), login(String)
+4818 [main] DEBUG com.edrop.mapper.UserOperationStatisticsMapper.selectUserOperationDataByYear  - <==      Total: 321

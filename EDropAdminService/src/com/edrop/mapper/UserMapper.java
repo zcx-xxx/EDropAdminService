@@ -26,22 +26,27 @@ import com.edrop.pojo.User;
 public interface UserMapper {
 
 	//通过用户名查询用户的信息
-	@Select("select * from user where username like #{param1}")
+//	@Select("select * from user where username like #{param1}")
 	public User selUserByUsername(String username);
 	
 	//通过电话查询用户的信息
-	@Select("select * from user where phone like #{param1}")
+//	@Select("select * from user where phone like #{param1}")
 	public User selUserByPhone(String phone);
 
 	//通过 qq 查询用户的信息
-	@Select("select * from user where qq like #{param1}")
+//	@Select("select * from user where qq like #{param1}")
 	public User selUserByQq(String qq);
 
 	//更新用户信息
-	public int upUserInfo(@Param("id")Integer id,@Param("phone")String phone, @Param("username")String username, @Param("address")String address, @Param("detailAddress")String detailAddress, @Param("gender")String gender);
+	public int upUserInfo(@Param("id")Integer id,@Param("phone")String phone, @Param("username")String username,
+			@Param("address")String address, @Param("detailAddress")String detailAddress, 
+			@Param("gender")String gender);
 	
 	//插入用户数据
-	public int insUserInfo(@Param("phone")String phone, @Param("username")String username, @Param("password")String password, @Param("imgpath")String imgpath, @Param("imgname")String imgname, @Param("address")String address, @Param("detailAddress")String detailAddress, @Param("gender")String gender, @Param("registerTime")String registerTime);
+	public int insUserInfo(@Param("phone")String phone, @Param("username")String username, 
+			@Param("password")String password, @Param("imgpath")String imgpath, @Param("imgname")String imgname,
+			@Param("address")String address, @Param("detailAddress")String detailAddress, 
+			@Param("gender")String gender, @Param("registerTime")String registerTime);
 
 	//id 查询用户信息
 	public User selUserInfoById(String id);

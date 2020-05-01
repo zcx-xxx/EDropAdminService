@@ -5,10 +5,39 @@
 
 <!-- namespace 不是必须为类的全限定名,只要是能够保证不重复即可 -->
 <mapper namespace="com.edrop.mapper.UserMapper">
-
+	<!-- userMap -->
+	<resultMap type="user" id="userMap">
+		<id column="id" property="id"/>
+		<result column="phone" property="phone"/>
+		<result column="qq" property="qq"/>
+		<result column="username" property="username"/>
+		<result column="password" property="password"/>
+		<result column="imgname" property="imgname"/>
+		<result column="imgpath" property="imgpath"/>
+		<result column="address" property="address"/>
+		<result column="gender" property="gender"/>
+		<result column="registerTime" property="registerTime"/>
+		<result column="detailAddress" property="detailAddress"/>
+		<result column="last_operation_time" property="lastOperationTime"/>
+	</resultMap>
+	
 	<!-- id 查询用户信息 -->
-	<select id="selUserInfoById" resultType="user">
+	<select id="selUserInfoById" resultMap="userMap">
 		select * from user where id = #{id}
+	</select>
+		<!-- 根据 username 查询用户信息  -->
+	<select id="selUserByUsername" resultMap="userMap">
+		select * from user where username like #{username}
+	</select>
+	
+	<!-- 手机查询用户 -->
+	<select id="selUserByPhone" resultMap="userMap">
+		select * from user where phone like #{phone}
+	</select>
+
+	<!-- qq查询用户  -->
+	<select id="selUserByQq" resultMap="userMap">
+		select * from user where qq like #{qq}
 	</select>
 	<!-- 插入用户信息 -->
 	<insert id="insUserInfo">
@@ -39,7 +68,7 @@
 	 	where id = #{id}
 	</update>
 	
-	<select id="selectAllUser" resultType="com.edrop.pojo.User">
+	<select id="selectAllUser" resultMap="userMap">
 		select *
 		from user
 		<where>
@@ -52,6 +81,4 @@
 		</where>
 		
 	</select>
-
-	
 </mapper>
