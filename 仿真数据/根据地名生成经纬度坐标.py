@@ -9,11 +9,11 @@ def geocodeB(address):
     @ address: 名称字符串
     @ 返回值：经度，纬度
     """
-    base_url = "http://api.map.baidu.com/geocoder?address={address}&output=json&key=8BB7F0E5C9C77BD6B9B655DB928B74B6E2D838FD".format(address=address)
+    base_url = "http://api.map.baidu.com/geocoder?address={address}&output=json&key=DDLwA2CBFGHRpxFzFx3K5KnBQtHP4hte".format(address=address)
     # print(address)
     response = requests.get(base_url)
     # print(response.status_code)
-    print(len(response.content))
+    # print(len(response.content))
     if (response.status_code == 200) and (len(response.content) < 300):
         answer = response.json()
         latitude = answer['result']['location']['lng']
@@ -24,7 +24,7 @@ def geocodeB(address):
 
 if __name__ == "__main__":
     # 打开文件
-    excel_file = xlrd.open_workbook('C:/Users/13071/Desktop/小区坐标.xlsx')
+    excel_file = xlrd.open_workbook('C:/Users/13071/Desktop/石家庄市小区.xlsx')
     # 根据索引打开指定的工作表
     read_sheet = excel_file.sheet_by_index(0)
     # 获取行数

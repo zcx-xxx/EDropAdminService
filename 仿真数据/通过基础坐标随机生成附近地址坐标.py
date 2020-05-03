@@ -44,15 +44,36 @@ if __name__ == "__main__":
         longitude = address[0]
         latitude = address[1]
 
-        for j in range(100):
-            address[0], address[1] = generate_random_gps(base_log=longitude, base_lat=latitude, radius=150)
-            address[5] = random.randint(20, 300)
-            # for p in range(len(address)):
-            #     write_sheet.write(tot, p, address[p])
-            # write_sheet.write(tot, 5, random.randint)
-            list.append({'coord':[address[0], address[1]], 'elevation':address[5]})
-            tot += 1
+        if (address[3] == '裕华区'):
+            for j in range(80):
+                address[0], address[1] = generate_random_gps(base_log=longitude, base_lat=latitude, radius=100)
+                address[5] = random.randint(300, 400)
+                # for p in range(len(address)):
+                #     write_sheet.write(tot, p, address[p])
+                # write_sheet.write(tot, 5, random.randint)
+                list.append({'coord':[address[0], address[1]], 'elevation':address[5]})
+                tot += 1
+        elif (address[3] == '长安区'):
+            for j in range(40):
+                # print("haha")
+                address[0], address[1] = generate_random_gps(base_log=longitude, base_lat=latitude, radius=100)
+                address[5] = random.randint(1, 50)
+                # for p in range(len(address)):
+                #     write_sheet.write(tot, p, address[p])
+                # write_sheet.write(tot, 5, random.randint)
+                list.append({'coord':[address[0], address[1]], 'elevation':address[5]})
+                tot += 1
+        else:
+            for j in range(20):
+                # print("haha")
+                address[0], address[1] = generate_random_gps(base_log=longitude, base_lat=latitude, radius=100)
+                address[5] = random.randint(1, 50)
+                # for p in range(len(address)):
+                #     write_sheet.write(tot, p, address[p])
+                # write_sheet.write(tot, 5, random.randint)
+                list.append({'coord':[address[0], address[1]], 'elevation':address[5]})
+                tot += 1
 
-    with open('data.json', 'w') as f:
+    with open('C:/Users/13071/Desktop/data.json', 'w') as f:
         json.dump(list, f)
     # write_book.save('C:/Users/13071/Desktop/random_address.xls')
