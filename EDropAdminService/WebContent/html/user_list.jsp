@@ -72,7 +72,7 @@
 	        'hideOnOverlayClick' : false,
 	        'showCloseButton' : false,
 	        'onClosed' : function() { 
-	        	window.location.href = 'html/house_list.jsp';
+	        	window.location.href = 'user/list';
 	        }
 	    });
 	});
@@ -100,14 +100,29 @@
 		}
 	}
 	
-	/** 删除 **/
+	/** 删除
 	function del(fyID){
 		// 非空判断
 		if(fyID == '') return;
 		if(confirm("您确定要删除吗？")){
 			$("#submitForm").attr("action", "/xngzf/archives/delFangyuan.action?fyID=" + fyID).submit();			
 		}
-	}
+	} **/
+	/**删除 **/
+	function del(userid){
+		$.ajax({
+			type: "POST",
+			url: "user/delete",
+			data: "userid=" + userid ,
+			dataType : "html",
+			cache:false,
+			success : function(dates){
+				$("#updatediv").html(dates);//要刷新的div
+				
+			},
+			 error:function(error){alert(error);}
+		});
+    }
 	
 	/** 批量删除 **/
 	function batchDel(){
@@ -215,7 +230,7 @@
 								<td>${p.gender }</td>
 								<td>${p.registerTime }</td>
 								<td><a href="user/edit?username=${p.username }"
-									class="edit">编辑</a> <a href="javascript:del('14458579642011');">删除</a>
+									class="edit">编辑</a> &nbsp;&nbsp;<a href="javascript:del(${p.id })">删除</a>
 								</td>
 							</tr>
 						</c:forEach>

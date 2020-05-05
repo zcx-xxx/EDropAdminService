@@ -8,4 +8,5 @@ public interface UserService {
 	void insertUser(String username,String phone,String address,String detailAddress,String gender,String registerTime);
 	User findUserByName(String username);
 	void updateUser(Integer id,String username,String phone,String address,String detailAddress,String gender);
+	void deleteById(Integer id);
 }

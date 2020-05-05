@@ -40,4 +40,8 @@ public class UserServiceImpl implements UserService {
 	public void updateUser(Integer id,String username, String phone, String address, String detailAddress, String gender) {
 		userMapper.upUserInfo(id, phone, username, address, detailAddress, gender);		
 	}
+
+	public void deleteById(Integer id) {
+		userMapper.deleteByUserId(id);
+	}
 }

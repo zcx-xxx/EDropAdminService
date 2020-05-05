@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.edrop.pojo.User;
@@ -26,7 +27,7 @@ public class UserController {
 			@RequestParam(name = "username", required = false) String username,
             @RequestParam(name = "phone", required = false) String phone ,
             @RequestParam(name = "page", defaultValue = "1") Integer page,
-            @RequestParam(name = "size", defaultValue = "2") Integer size) {
+            @RequestParam(name = "size", defaultValue = "5") Integer size) {
 		ModelAndView modelAndView = new ModelAndView();
 		PageInfo<User> pageInfo = userService.getAllUser(username,phone,page,size);
 		modelAndView.addObject("pageInfo",pageInfo);
@@ -53,17 +54,19 @@ public class UserController {
 	}
 
 	@RequestMapping("/update")
+	@ResponseBody
 	public String update(@RequestParam("userid") Integer id,@RequestParam("username") String username, @RequestParam("address") String address,
 			@RequestParam("detailAddress") String detailAddress, @RequestParam("phone") String phone,
 			@RequestParam("gender") String gender) {
-		ModelAndView modelAndView = new ModelAndView();
+		System.out.println(1);
 		userService.updateUser(id, username, phone, address, detailAddress, gender);
-		return "uesr_list";
+		return "success";
 	}
 		
 	
 	
 	@RequestMapping("/add")
+	@ResponseBody
 	public String addUser(@RequestParam("username")String username,
 			@RequestParam("address")String address,
 			@RequestParam("detailAddress")String detailAddress,
@@ -75,6 +78,17 @@ public class UserController {
 		String registerTime = dateFormat.format(date); 
 		userService.insertUser(username, phone, address, detailAddress, gender, registerTime);
 		
-		return "uesr_list";
+		return "success";
 	}
+	@RequestMapping("/delete")
+	public ModelAndView delete(@RequestParam("userid") Integer id,@RequestParam(name = "page", defaultValue = "1") Integer page,
+            @RequestParam(name = "size", defaultValue = "5") Integer size) {
+		userService.deleteById(id);
+		ModelAndView modelAndView = new ModelAndView();
+		PageInfo<User> pageInfo = userService.getAllUser(null, null, page,size);
+		modelAndView.addObject("pageInfo",pageInfo);
+		modelAndView.setViewName("user_find");
+		return modelAndView;
+	}
+
 }

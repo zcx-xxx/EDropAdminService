@@ -81,4 +81,9 @@
 		</where>
 		
 	</select>
+	<delete id="deleteByUserId">
+		delete 
+		from user
+		where id = #{id}
+	</delete>
 </mapper>

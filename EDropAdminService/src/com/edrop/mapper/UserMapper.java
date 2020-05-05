@@ -54,4 +54,7 @@ public interface UserMapper {
 	//查询所有的用户信息
 	public List<User> selectAllUser(@Param("username")String username,@Param("phone")String phone);
 	
+	//删除用户信息
+	public void deleteByUserId(Integer id);
+	
 }

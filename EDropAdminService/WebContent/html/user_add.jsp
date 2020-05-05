@@ -21,11 +21,23 @@
 		/*
 		 * 提交
 		 */
-		$("#submitbutton").click(function() {
-			if(validateForm()){
-				$("#submitForm").attr("action", "user/add").submit();
-			}
-		});
+		$("#submitbutton").click(function(){
+			$.ajax({
+				type: "POST",
+				url: "user/add",
+				data: $('#submitForm').serialize(),
+				dataType : "text",
+				cache:false,
+				success : function(dates){
+					if(dates =='success'){
+						/**  关闭弹出iframe  **/
+						window.parent.$.fancybox.close();
+					}
+					
+				},
+				 error:function(error){alert(error);}
+			});
+	    })
 		
 		/*
 		 * 取消

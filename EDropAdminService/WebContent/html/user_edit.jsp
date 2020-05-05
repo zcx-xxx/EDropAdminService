@@ -21,11 +21,25 @@
 		/*
 		 * 提交
 		 */
-		$("#submitbutton").click(function() {
-			if(validateForm()){
-				$("#submitForm").attr("action", "user/update").submit();
-			}
-		});
+	
+		$("#submitbutton").click(function(){
+			
+			$.ajax({
+				type: "POST",
+				url: "user/update",
+				data: $('#submitForm').serialize(),
+				dataType : "text",
+				cache:false,
+				success : function(dates){
+					if(dates =='success'){
+						/**  关闭弹出iframe  **/
+						window.parent.$.fancybox.close();
+					}
+					
+				},
+				 error:function(error){alert(error);}
+			});
+	    })
 		
 		/*
 		 * 取消
@@ -34,12 +48,6 @@
 			/**  关闭弹出iframe  **/
 			window.parent.$.fancybox.close();
 		});
-		
-		var result = 'null';
-		if(result =='success'){
-			/**  关闭弹出iframe  **/
-			window.parent.$.fancybox.close();
-		}
 	});
 	
 	/** 检测房源房号是否存在  **/
@@ -101,7 +109,7 @@
 </script>
 </head>
 <body>
-<form id="submitForm" name="submitForm" action="/xngzf/archives/initFangyuan.action" method="post">
+<form id="submitForm" name="submitForm" action="user/update" method="post">
 	<input type="hidden" name="fyID" value="14458625716623" id="fyID"/>
 	<div id="container">
 		<div id="nav_links">
