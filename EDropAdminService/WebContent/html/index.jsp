@@ -289,7 +289,7 @@
 				<ul>
 					<li>
 						<img alt="当前用户" src="html/images/common/user.jpg">：
-						<span>admin</span>
+						<span id="user_name">admin</span>
 					</li>
 					<li>
 						<img alt="事务月份" src="html/images/common/month.jpg">：
