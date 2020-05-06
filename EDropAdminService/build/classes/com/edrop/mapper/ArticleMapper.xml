@@ -20,10 +20,12 @@
 <!-- 	文章（文章id，发布时间，文章简介，是否点过赞，总点赞数量，总评论数量） -->
 	<resultMap type="article" id="articleBriefInfoMap">
 		<id column="id" property="id"/>
+		<result column="article_title" property="articleTitle"/>
 		<result column="publish_date" property="publishDate"/>
 		<result column="article_description" property="articleDescription"/>
 		<result column="article_like_count" property="articleLikeCount"/>
 		<result column="article_comment_count" property="articleCommentCount"/>
+		<result column="article_views" property="articleViews"/>
 	</resultMap>
 
 	<!-- 测试添加文章 -->
@@ -50,6 +52,10 @@
 	<select id="selectArticleBriefInfo" resultMap="articleBriefInfoMap">
 		select * from article order by id desc limit #{start},#{counts}
 	</select>	
+	<!-- 查询所有的文章 -->
+	<select id="selectAllArticle" resultMap="articleBriefInfoMap">
+		select * from article order by id desc
+	</select>	
 	<!-- 跟新文章点赞数量 -->
 	<update id="updateLikeCounts">
 		update article set article_like_count=article_like_count+#{likeDelta} where id=#{articleId}
@@ -57,4 +63,8 @@
 	<update id="updateCommentCounts">
 		update article set article_comment_count=article_comment_count+#{delta} where id=#{articleId}
 	</update>
+	<!-- 删除文章 通过 Id -->
+	<delete id="deleteArticleById">
+		delete from article where id=#{articleId}
+	</delete>
 </mapper>

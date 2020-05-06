@@ -25,4 +25,9 @@ public interface ArticleMapper {
 	
 	// 更新评论数量
 	public Integer updateCommentCounts(@Param("articleId")Integer articleId, @Param("delta")Integer delta);
+	
+	// 查询所有的文章
+	public List<Article> selectAllArticle();
+	// 根据 id 删除文章
+	public void deleteArticleById(@Param("articleId")Integer articleId);
 }

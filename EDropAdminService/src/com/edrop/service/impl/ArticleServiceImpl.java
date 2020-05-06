@@ -17,8 +17,11 @@ import org.springframework.stereotype.Service;
 import com.edrop.mapper.ArticleMapper;
 import com.edrop.mapper.UserArticleIsLikeMapper;
 import com.edrop.pojo.Article;
+import com.edrop.pojo.User;
 import com.edrop.service.ArticleService;
 import com.edrop.utils.HuffmanCodeUtil;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 @Service
 public class ArticleServiceImpl implements ArticleService{
 	@Resource
@@ -130,5 +133,20 @@ public class ArticleServiceImpl implements ArticleService{
 			articleMapper.updateLikeCounts(articleId, -1);
 		}
 		return state;
+	}
+
+	@Override
+	public PageInfo<Article> getAllArticleByPage(Integer page, Integer size) {
+		PageHelper.startPage(page,size);
+		
+		List<Article> articles =  articleMapper.selectAllArticle();
+		PageInfo<Article> info = new PageInfo<Article>(articles);
+		return info;
+	}
+
+	@Override
+	public void deleteArticleById(Integer articleId) {
+		articleMapper.deleteArticleById(articleId);
+		return;
 	}
 }
