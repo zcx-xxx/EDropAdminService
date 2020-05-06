@@ -1,5 +1,10 @@
 package com.edrop.test;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+//import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 
@@ -20,14 +25,12 @@ public class TestUserOperationService {
 	
 	@Test
 	public void testSelectData() {
-		List<Integer> ans = userOperationStatisticsServiceImpl
-				.getUserOperationDataByYear(2020, "user", "login");
+		String ans = userOperationStatisticsServiceImpl
+				.getUserOperationData("user", "login");
 		if (ans == null) {
 			System.out.println("ans is null");
 		} else {
-			for (int i = 1; i < ans.size(); ++i) {
-				System.out.print(ans.get(i) + ", ");
-			}
+			System.out.println(ans);
 		}
 	}
 	
@@ -41,20 +44,21 @@ public class TestUserOperationService {
 	 */
 	@Test
 	public void testAddNewData() {
-		Integer[] years = {2018, 2019, 2020};
-		Integer[] months = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-		Integer[] days = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 
-				14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28};
-		String[] userOrEmployee = {"user", "employee"};
-		String[] loginOrRegister = {"login", "register"};
-		
-		Random random = new Random();
-		System.out.println("test");
-//		for (int i = 0; i < 6000; ++i) {
-//			userOperationStatisticsServiceImpl.addOneNewOperation(years[random.nextInt(years.length)],
-//					months[random.nextInt(months.length)], days[random.nextInt(days.length)],
-//					userOrEmployee[random.nextInt(userOrEmployee.length)], 
-//					loginOrRegister[random.nextInt(loginOrRegister.length)]);
-//		}
+		Calendar start = Calendar.getInstance();
+        start.set(2018, 0, 1);
+        Long startTime = start.getTimeInMillis();
+        Calendar end = Calendar.getInstance();
+        end.set(2021, 0, 0);
+        Long endTime = end.getTimeInMillis();
+        Long oneDay = 1000 * 60 * 60 * 24l;
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        Random random = new Random();
+        for (Long i = startTime; i <= endTime; i += oneDay) {
+            Date date = new Date(i);
+            Integer year = date.getYear() + 1900;
+            Integer month = date.getMonth() + 1;
+            Integer day = date.getDate();
+            userOperationStatisticsServiceImpl.addOneNewOperation(year, month, day, "user", "login", random.nextInt(400) + 20);
+        }
 	}
 }

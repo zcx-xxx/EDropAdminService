@@ -15,6 +15,17 @@
 	<script type="text/javascript" src="html/scripts/zTree/jquery.ztree.core-3.2.js"></script>
 	<script type="text/javascript" src="html/scripts/authority/commonAll.js"></script>
 	<script type="text/javascript">
+		$(function(){
+			showUserName();
+		})
+		function showUserName(){
+			var user_name_span = $("#user_name");
+			var storage = window.localStorage;
+			var user_name = storage["user_name"];
+			user_name_span.text(user_name);
+		}
+	</script>
+	<script type="text/javascript">
 		/**退出系统**/
 		function logout(){
 			if(confirm("您确定要退出本系统吗？")){
@@ -227,7 +238,7 @@
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":34,"resourceName":"管理员","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":55,"resourceName":"社区管理","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":30,"resourceName":"数据可视化","resourceOrder":0,"resourceType":""},
-		            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":31,"resourceName":"用户量","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"html/show_user_dau.jsp","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":31,"resourceName":"日活用户","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":44,"resourceName":"添加文章","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":24,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":26,"resourceName":"添加垃圾信息","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"user/list","checked":false,"delFlag":0,"parentID":16,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":17,"resourceName":"所有订单","resourceOrder":0,"resourceType":""},
@@ -236,7 +247,7 @@
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":24,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":59,"resourceName":"查找垃圾信息","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":34,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":35,"resourceName":"添加敏感词","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":45,"resourceName":"文章管理","resourceOrder":0,"resourceType":""},
-		            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":46,"resourceName":"订单量","resourceOrder":0,"resourceType":""},
+		            {"accessPath":"html/show_user_place_order_address_info.jsp","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":46,"resourceName":"业务分析","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":47,"resourceName":"日活用户","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":43,"resourceName":"推送信息","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"","checked":false,"delFlag":0,"parentID":34,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":36,"resourceName":"添加管理员","resourceOrder":0,"resourceType":""},

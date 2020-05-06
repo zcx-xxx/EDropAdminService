@@ -24,6 +24,8 @@
 				dataType: "json",
 				success: function(msg){
 					if (msg.state == "success") {
+						var storage=window.localStorage;
+						storage["user_name"] = name;
 						$("#submitForm").attr("action", "html/index.jsp").submit();
 					} else if (msg.state == "fail"){
 						$("#login_err").text("用户名或者密码错误");
@@ -47,7 +49,9 @@
 				dataType: "json",
 				success: function(msg){
 					if (msg.state == "success") {
-						$("#submitForm").attr("action", "html/index.html").submit();
+						var storage=window.localStorage;
+						storage["user_name"] = name;
+						$("#submitForm").attr("action", "html/index.jsp").submit();
 					} else if (msg.state == "fail"){
 						$("#login_err").text("用户名或者密码错误");
 					}

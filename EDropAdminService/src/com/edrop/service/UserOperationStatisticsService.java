@@ -22,7 +22,7 @@ public interface UserOperationStatisticsService {
 	 * @return: List<Integer>      
 	 * @throws
 	 */
-	public List<Integer> getUserOperationDataByYear(Integer year, String userOrEmployee, String loginOrRegister);
+	public String getUserOperationData(String userOrEmployee, String loginOrRegister);
 
 	/**
 	 * add a new operation for user or employee
@@ -37,5 +37,6 @@ public interface UserOperationStatisticsService {
 	 * @return: Integer      
 	 * @throws
 	 */
-	public Integer addOneNewOperation(Integer year, Integer month, Integer day, String userOrEmployee, String loginOrRegister);
+	public Integer addOneNewOperation(Integer year, Integer month, Integer day, 
+			String userOrEmployee, String loginOrRegister, Integer times);
 }

@@ -14,9 +14,10 @@
 		<result column="total_operation_times" property="totalOperationTimes"/>
 	</resultMap>
 	<!-- 通过 year 查询用户操作  -->
-	<select id="selectUserOperationDataByYear" resultMap="userOperationStatisticsMap">
-		select * from user_operation_statistics where year=#{year} 
-		and user_or_employee like #{userOrEmployee} and login_or_register like #{loginOrRegister}
+	<select id="selectUserOperationData" resultMap="userOperationStatisticsMap">
+		select * from user_operation_statistics 
+		where user_or_employee like #{userOrEmployee} and login_or_register like #{loginOrRegister}
+		order by year, month, day
 	</select>
 	
 	<!-- 通过全字段查询 -->

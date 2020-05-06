@@ -12,7 +12,7 @@ import com.edrop.pojo.UserOperationStatistics;
 
 public interface UserOperationStatisticsMapper {
 	// select user operation data by year
-	public List<UserOperationStatistics> selectUserOperationDataByYear(@Param("year")Integer year,
+	public List<UserOperationStatistics> selectUserOperationData(
 			@Param("userOrEmployee")String userOrEmployee, 
 			@Param("loginOrRegister")String loginOrRegister);
 	
