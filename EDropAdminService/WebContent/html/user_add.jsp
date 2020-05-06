@@ -155,8 +155,8 @@
 					<td class="ui_text_lt">
 						<select name="gender" id="gender" class="ui_select01">
 							<option value="">--请选择--</option>
-                            <option value="16" selected="selected">男</option>
-                            <option value="16" >女</option>
+                            <option value="男" selected="selected">男</option>
+                            <option value="女" >女</option>
                         </select>
 					</td>
 				</tr>

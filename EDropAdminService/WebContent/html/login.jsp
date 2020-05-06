@@ -24,7 +24,7 @@
 				dataType: "json",
 				success: function(msg){
 					if (msg.state == "success") {
-						$("#submitForm").attr("action", "html/index.html").submit();
+						$("#submitForm").attr("action", "html/index.jsp").submit();
 					} else if (msg.state == "fail"){
 						$("#login_err").text("用户名或者密码错误");
 					}

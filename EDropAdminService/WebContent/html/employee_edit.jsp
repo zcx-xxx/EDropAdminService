@@ -26,7 +26,7 @@
 			
 			$.ajax({
 				type: "POST",
-				url: "user/update",
+				url: "employee/update",
 				data: $('#submitForm').serialize(),
 				dataType : "text",
 				cache:false,
@@ -50,36 +50,6 @@
 		});
 	});
 	
-	/** 检测房源房号是否存在  **/
-	function checkFyFh(){
-		// 分别获取小区编号、栋号、层号、房号
-		var fyID = $('#fyID').val();
-		var fyXqCode = $("#fyXq").val();
-		var fyDh = $("#fyDh").val();
-		var fyCh = $("#fyCh").val();	
-		var fyFh = $("#fyFh").val();
-		if(fyXqCode!="" && fyDh!="" && fyCh!="" && fyFh!=""){
-			// 给房屋坐落地址赋值
-			$("#fyZldz").val($('#fyDh option:selected').text() + fyCh + "-" + fyFh);
-			// 异步判断该房室是否存在，如果已存在，给用户已提示哦
-			$.ajax({
-				type:"POST",
-				url:"checkFyFhIsExists.action",
-				data:{"fangyuanEntity.fyID":fyID,"fangyuanEntity.fyXqCode":fyXqCode, "fangyuanEntity.fyDhCode":fyDh, "fangyuanEntity.fyCh":fyCh, "fangyuanEntity.fyFh":fyFh},
-				dataType : "text",
-				success:function(data){
-// 					alert(data);
-					// 如果返回数据不为空，更改“房源信息”
-					if(data=="1"){
-						 art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'该房室在系统中已经存在哦，\n请维护其他房室数据', ok:true,});
-						 $("#fyFh").css("background", "#EEE");
-						 $("#fyFh").focus();
-						 return false;
-					}
-				}
-			});
-		}
-	}
 
 	
 	/** 表单验证  **/
@@ -92,12 +62,12 @@
 			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'请填写手机号码', ok:true,});
 			return false;
 		}
-		if($("#address").val()==""){
-			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'填写地址', ok:true,});
+		if($("#imgpath").val()==""){
+			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'填写头像路径', ok:true,});
 			return false;
 		}
-		if($("#detailAddress").val()==""){
-			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'填写详细地址', ok:true,});
+		if($("#qq").val()==""){
+			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'填写qq', ok:true,});
 			return false;
 		}
 		if($("#gender").val()==""){
@@ -113,7 +83,7 @@
 	<input type="hidden" name="fyID" value="14458625716623" id="fyID"/>
 	<div id="container">
 		<div id="nav_links">
-			当前位置：基础数据&nbsp;>&nbsp;<span style="color: #1A5CC6;">用户信息编辑</span>
+			当前位置：基础数据&nbsp;>&nbsp;<span style="color: #1A5CC6;">工作人员信息编辑</span>
 			<div id="page_close">
 				<a href="javascript:parent.$.fancybox.close();">
 					<img src="html/images/common/page_close.png" width="20" height="20" style="vertical-align: text-top;"/>
@@ -122,30 +92,30 @@
 		</div>
 		<div class="ui_content">
 			<table  cellspacing="0" cellpadding="0" width="100%" align="left" border="0">
-				<input type="hidden" id="userid" name="userid" value="${user.id }" class="ui_input_txt01"/>
+				<input type="hidden" id="userid" name="userid" value="${employee.id }" class="ui_input_txt01"/>
 					
 				<tr>
 					<td class="ui_text_rt" width="80">用户名</td>
 					<td class="ui_text_lt">
-						<input type="text" id="username" name="username" value="${user.username }" class="ui_input_txt01"/>
+						<input type="text" id="username" name="username" value="${employee.username }" class="ui_input_txt01"/>
 					</td>
 				</tr>
 				<tr>
 					<td class="ui_text_rt">电话</td>
 					<td class="ui_text_lt">
-						<input type="text" id="phone" name="phone" value="${user.phone }" class="ui_input_txt01"/>
+						<input type="text" id="phone" name="phone" value="${employee.phone }" class="ui_input_txt01"/>
 					</td>
 				</tr>
 				<tr>
-					<td class="ui_text_rt">地址</td>
+					<td class="ui_text_rt">头像路径</td>
 					<td class="ui_text_lt">
-						<input type="text" id="address" name="address" value="${user.address }" class="ui_input_txt01"/>
+						<input type="text" id="imgpath" name="imgpath" value="${employee.imgpath }" class="ui_input_txt01" onkeyup="checkFyFh();"/>
 					</td>
 				</tr>
 				<tr>
-					<td class="ui_text_rt">详细地址</td>
+					<td class="ui_text_rt">QQ</td>
 					<td class="ui_text_lt">
-						<input type="text" id="detailAddress" name="detailAddress" value="${user.detailAddress }" class="ui_input_txt01" onkeyup="checkFyFh();"/>
+						<input type="text" id="qq" name="qq" value="${employee.qq }" class="ui_input_txt01" onkeyup="checkFyFh();"/>
 					</td>
 				</tr>
 				<tr>

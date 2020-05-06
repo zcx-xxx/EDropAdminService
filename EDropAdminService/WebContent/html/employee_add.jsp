@@ -21,12 +21,10 @@
 		/*
 		 * 提交
 		 */
-	
 		$("#submitbutton").click(function(){
-			
 			$.ajax({
 				type: "POST",
-				url: "user/update",
+				url: "employee/add",
 				data: $('#submitForm').serialize(),
 				dataType : "text",
 				cache:false,
@@ -48,39 +46,14 @@
 			/**  关闭弹出iframe  **/
 			window.parent.$.fancybox.close();
 		});
+		
+		var result = 'null';
+		if(result =='success'){
+			/**  关闭弹出iframe  **/
+			window.parent.$.fancybox.close();
+		}
 	});
 	
-	/** 检测房源房号是否存在  **/
-	function checkFyFh(){
-		// 分别获取小区编号、栋号、层号、房号
-		var fyID = $('#fyID').val();
-		var fyXqCode = $("#fyXq").val();
-		var fyDh = $("#fyDh").val();
-		var fyCh = $("#fyCh").val();	
-		var fyFh = $("#fyFh").val();
-		if(fyXqCode!="" && fyDh!="" && fyCh!="" && fyFh!=""){
-			// 给房屋坐落地址赋值
-			$("#fyZldz").val($('#fyDh option:selected').text() + fyCh + "-" + fyFh);
-			// 异步判断该房室是否存在，如果已存在，给用户已提示哦
-			$.ajax({
-				type:"POST",
-				url:"checkFyFhIsExists.action",
-				data:{"fangyuanEntity.fyID":fyID,"fangyuanEntity.fyXqCode":fyXqCode, "fangyuanEntity.fyDhCode":fyDh, "fangyuanEntity.fyCh":fyCh, "fangyuanEntity.fyFh":fyFh},
-				dataType : "text",
-				success:function(data){
-// 					alert(data);
-					// 如果返回数据不为空，更改“房源信息”
-					if(data=="1"){
-						 art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'该房室在系统中已经存在哦，\n请维护其他房室数据', ok:true,});
-						 $("#fyFh").css("background", "#EEE");
-						 $("#fyFh").focus();
-						 return false;
-					}
-				}
-			});
-		}
-	}
-
 	
 	/** 表单验证  **/
 	function validateForm(){
@@ -92,14 +65,11 @@
 			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'请填写手机号码', ok:true,});
 			return false;
 		}
-		if($("#address").val()==""){
-			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'填写地址', ok:true,});
+		if($("#qq").val()==""){
+			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'填写qq', ok:true,});
 			return false;
 		}
-		if($("#detailAddress").val()==""){
-			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'填写详细地址', ok:true,});
-			return false;
-		}
+		
 		if($("#gender").val()==""){
 			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'性别不能为空', ok:true,});
 			return false;
@@ -109,7 +79,7 @@
 </script>
 </head>
 <body>
-<form id="submitForm" name="submitForm" action="user/update" method="post">
+<form id="submitForm" name="submitForm" action="/xngzf/archives/initFangyuan.action" method="post">
 	<input type="hidden" name="fyID" value="14458625716623" id="fyID"/>
 	<div id="container">
 		<div id="nav_links">
@@ -122,32 +92,25 @@
 		</div>
 		<div class="ui_content">
 			<table  cellspacing="0" cellpadding="0" width="100%" align="left" border="0">
-				<input type="hidden" id="userid" name="userid" value="${user.id }" class="ui_input_txt01"/>
-					
 				<tr>
 					<td class="ui_text_rt" width="80">用户名</td>
 					<td class="ui_text_lt">
-						<input type="text" id="username" name="username" value="${user.username }" class="ui_input_txt01"/>
+						<input type="text" id="username" name="username" class="ui_input_txt01"/>
 					</td>
 				</tr>
 				<tr>
 					<td class="ui_text_rt">电话</td>
 					<td class="ui_text_lt">
-						<input type="text" id="phone" name="phone" value="${user.phone }" class="ui_input_txt01"/>
+						<input type="text" id="phone" name="phone"  class="ui_input_txt01"/>
 					</td>
 				</tr>
 				<tr>
-					<td class="ui_text_rt">地址</td>
+					<td class="ui_text_rt">QQ</td>
 					<td class="ui_text_lt">
-						<input type="text" id="address" name="address" value="${user.address }" class="ui_input_txt01"/>
+						<input type="text" id="qq" name="qq"  class="ui_input_txt01"/>
 					</td>
 				</tr>
-				<tr>
-					<td class="ui_text_rt">详细地址</td>
-					<td class="ui_text_lt">
-						<input type="text" id="detailAddress" name="detailAddress" value="${user.detailAddress }" class="ui_input_txt01" onkeyup="checkFyFh();"/>
-					</td>
-				</tr>
+
 				<tr>
 					<td class="ui_text_rt">性别</td>
 					<td class="ui_text_lt">

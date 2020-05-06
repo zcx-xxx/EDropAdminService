@@ -19,13 +19,12 @@
 <title>信息管理系统</title>
 <script type="text/javascript">
 	$(function(){
-		// 登录
-		$("#find_user").click(function(){
+		$("#find_emp").click(function(){
 			var username = $("#username").val();
 			var phone = $("#phone").val();
 			$.ajax({
 				type: "POST",
-				url: "user/find",
+				url: "employee/find",
 				data: "username=" + username + "&phone=" + phone,
 				dataType : "html",
 				cache:false,
@@ -40,14 +39,14 @@
 	$(document).ready(function(){
 		/** 新增   **/
 	    $("#addBtn").fancybox({
-	    	'href'  : 'html/user_add.jsp',
+	    	'href'  : 'html/employee_add.jsp',
 	    	'width' : 733,
 	        'height' : 530,
 	        'type' : 'iframe',
 	        'hideOnOverlayClick' : false,
 	        'showCloseButton' : false,
 	        'onClosed' : function() { 
-	        	window.location.href = 'user/list';
+	        	window.location.href = 'employee/list';
 	        }
 	    });
 		
@@ -72,7 +71,7 @@
 	        'hideOnOverlayClick' : false,
 	        'showCloseButton' : false,
 	        'onClosed' : function() { 
-	        	window.location.href = 'user/list';
+	        	window.location.href = 'employee/list';
 	        }
 	    });
 	});
@@ -112,7 +111,7 @@
 	function del(userid){
 		$.ajax({
 			type: "POST",
-			url: "user/delete",
+			url: "employee/delete",
 			data: "userid=" + userid ,
 			dataType : "html",
 			cache:false,
@@ -194,9 +193,11 @@
 						<div id="box_center">
 							用户名&nbsp;&nbsp;<input type="text" id="username" name="username" class="ui_input_txt02" />
 							电话&nbsp;&nbsp;<input type="text" id="phone" name="phone" class="ui_input_txt02" />
+							QQ&nbsp;&nbsp;<input type="text" id="qq" name="qq" class="ui_input_txt02" />
+							性别&nbsp;&nbsp;<input type="text" id="gender" name="gender" class="ui_input_txt02" />
 						</div>
 						<div id="box_bottom">
-							<input type="button" value="查询" class="ui_input_btn01" id="find_user"/> 
+							<input type="button" value="查询" class="ui_input_btn01" id="find_emp"/> 
 							<input type="button" value="新增" class="ui_input_btn01" id="addBtn" /> 
 							<input type="button" value="删除" class="ui_input_btn01" onclick="batchDel();" /> 
 							<input type="button" value="导入" class="ui_input_btn01" id="importBtn" />
@@ -213,8 +214,8 @@
 							</th>
 							<th>用户名</th>
 							<th>电话</th>
-							<th>地址</th>
-							<th>详细地址</th>
+							<th>头像路径</th>
+							<th>QQ</th>
 							<th>性别</th>
 							<th>注册时间</th>
 							<th>操作</th>
@@ -225,11 +226,11 @@
 									value="14458579642011" class="acb" /></td>
 								<td>${p.username }</td>
 								<td>${p.phone }</td>
-								<td>${p.address }</td>
-								<td>${p.detailAddress }</td>
+								<td>${p.imgpath }</td>
+								<td>${p.qq }</td>
 								<td>${p.gender }</td>
 								<td>${p.registerTime }</td>
-								<td><a href="user/edit?username=${p.username }"
+								<td><a href="employee/edit?username=${p.username }"
 									class="edit">编辑</a> &nbsp;&nbsp;<a href="javascript:del(${p.id })">删除</a>
 								</td>
 							</tr>
