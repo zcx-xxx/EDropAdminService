@@ -28,7 +28,19 @@ public class TestUserPlaceOrderAddressInfo {
 	
 	@Test
 	public void testSelectAllData() {
+		Long beginTimes = System.currentTimeMillis();
 		String ans = userPlaceOrderAddressInfoServiceImpl.getOrderAddressInfo();
-		System.out.println(ans);
+		Long endTimes = System.currentTimeMillis();
+//		System.out.println(ans);
+		System.out.println("without thread cost times:" + ((endTimes - beginTimes) / 1000));
+	}
+	
+	@Test
+	public void testMultipleThreadSelect() {
+		Long beginTimes = System.currentTimeMillis();
+		String ans = userPlaceOrderAddressInfoServiceImpl.getOrderAddressInfoByMultipleThread();
+		Long endTimes = System.currentTimeMillis();
+//		System.out.println(ans);
+		System.out.println("use thread cost times:" + ((endTimes - beginTimes) / 1000));
 	}
 }

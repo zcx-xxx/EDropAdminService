@@ -61,15 +61,6 @@ public class UserOperationStatisticsServiceImpl implements UserOperationStatisti
 			Integer counts = record.getTotalOperationTimes();
 			ans = userOperationStatisticsMapper.updateUserOperationDataById(id, counts + times);
 		}
-//		if (null != record) {
-//			Integer id = record.getId();
-//			Integer counts = record.getTotalOperationTimes();
-//			ans = userOperationStatisticsMapper.updateUserOperationDataById(id, counts + 1);
-//		} else {
-//			// 否则插入新的数据
-//			ans = userOperationStatisticsMapper.insertNewUserOperationData(year, month, day, userOrEmployee, 
-//					loginOrRegister, 1);
-//		}
 		
 		return ans;
 	}
