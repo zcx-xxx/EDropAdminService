@@ -58,7 +58,7 @@ src="http://api.map.baidu.com/api?v=2.0&ak=DDLwA2CBFGHRpxFzFx3K5KnBQtHP4hte" ></
 		        myChart.setOption(option = {
 		            animation: true,
 		            bmap: {
-		                center: [114.523618,38.00252],
+		                center: [114.515931,38.03372],
 		                zoom: 14,
 		                roam: true
 		            },
@@ -96,7 +96,7 @@ src="http://api.map.baidu.com/api?v=2.0&ak=DDLwA2CBFGHRpxFzFx3K5KnBQtHP4hte" ></
         myChart.setOption(option = {
             animation: false,
             bmap: {
-                center: [114.523618,38.00252],
+                center: [114.515931,38.03372],
                 zoom: 14,
                 roam: true
             },
