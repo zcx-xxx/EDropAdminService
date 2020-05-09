@@ -14,4 +14,14 @@
 	<select id="selectOrderAddressInfo" resultMap="userPlaceOrderAddressInfoMap">
 		select * from user_place_order_address_info
 	</select>
+	
+	<!-- 查询指定范围数据 -->
+	<select id="selectOrderAddressInfoByPage" resultMap="userPlaceOrderAddressInfoMap">
+		select * from user_place_order_address_info limit #{begin}, #{count}
+	</select>
+	
+	<!-- 查询数据条数 -->
+	<select id="getCountData" resultType="java.lang.Integer">
+		select count(*) from user_place_order_address_info
+	</select>
 </mapper>

@@ -1,12 +1,16 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
- 	<base href="http://localhost:8080/EDropAdminService/" />
+<base href="<%=basePath %>>">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>EDrop-后台管理系统</title>
 	<link href="html/style/authority/main_css.css" rel="stylesheet" type="text/css" />
@@ -289,7 +293,7 @@
 				<ul>
 					<li>
 						<img alt="当前用户" src="html/images/common/user.jpg">：
-						<span>admin</span>
+						<span id="user_name">admin</span>
 					</li>
 					<li>
 						<img alt="事务月份" src="html/images/common/month.jpg">：

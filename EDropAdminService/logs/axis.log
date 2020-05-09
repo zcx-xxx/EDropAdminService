@@ -1,3 +1,382 @@
 4662 [main] DEBUG com.edrop.mapper.UserOperationStatisticsMapper.selectUserOperationDataByYear  - ==>  Preparing: select * from user_operation_statistics where year=? and user_or_employee like ? and login_or_register like ? 
 4701 [main] DEBUG com.edrop.mapper.UserOperationStatisticsMapper.selectUserOperationDataByYear  - ==> Parameters: 2020(Integer), user(String), login(String)
 4818 [main] DEBUG com.edrop.mapper.UserOperationStatisticsMapper.selectUserOperationDataByYear  - <==      Total: 321
+7855 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==>  Preparing: select * from user_place_order_address_info 
+7885 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==> Parameters: 
+11271 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - <==      Total: 8240
+11668 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==>  Preparing: select count(*) from user_place_order_address_info 
+11668 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==> Parameters: 
+6662 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==>  Preparing: select count(*) from user_place_order_address_info 
+6690 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==> Parameters: 
+5477 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==>  Preparing: select count(*) from user_place_order_address_info 
+5504 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==> Parameters: 
+5565 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - <==      Total: 1
+5572 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+5573 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 0(Integer), 1000(Integer)
+6024 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+6027 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+6028 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 1000(Integer), 1000(Integer)
+6499 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+6500 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+6501 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 2000(Integer), 1000(Integer)
+6774 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+6775 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+6776 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 3000(Integer), 1000(Integer)
+6989 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+6990 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+6992 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 4000(Integer), 1000(Integer)
+7073 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+7074 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+7074 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 5000(Integer), 1000(Integer)
+8218 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+8219 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+8220 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 6000(Integer), 1000(Integer)
+8488 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+8489 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+8490 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 7000(Integer), 1000(Integer)
+8929 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+8930 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+8931 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 8000(Integer), 1000(Integer)
+9115 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 240
+4155 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==>  Preparing: select * from user_place_order_address_info 
+4183 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==> Parameters: 
+8447 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - <==      Total: 8240
+5173 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==>  Preparing: select count(*) from user_place_order_address_info 
+5197 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==> Parameters: 
+5279 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - <==      Total: 1
+5289 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+5290 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 0(Integer), 1000(Integer)
+5461 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+5464 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+5465 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 1000(Integer), 1000(Integer)
+5760 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+5762 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+5762 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 2000(Integer), 1000(Integer)
+6406 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+6407 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+6408 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 3000(Integer), 1000(Integer)
+6718 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+6719 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+6720 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 4000(Integer), 1000(Integer)
+6938 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+6939 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+6940 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 5000(Integer), 1000(Integer)
+7160 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+7161 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+7162 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 6000(Integer), 1000(Integer)
+8364 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+8365 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+8366 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 7000(Integer), 1000(Integer)
+8779 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+8780 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+8781 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 8000(Integer), 1000(Integer)
+8965 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 240
+11222 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==>  Preparing: select count(*) from user_place_order_address_info 
+11245 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==> Parameters: 
+11731 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - <==      Total: 1
+11740 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+11741 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 0(Integer), 500(Integer)
+12927 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+12928 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+12929 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 500(Integer), 500(Integer)
+13800 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+13801 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+13802 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 1000(Integer), 500(Integer)
+15573 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+15574 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+15575 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 1500(Integer), 500(Integer)
+16891 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+16892 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+16893 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 2000(Integer), 500(Integer)
+17587 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+17588 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+17589 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 2500(Integer), 500(Integer)
+18761 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+18762 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+18763 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 3000(Integer), 500(Integer)
+18837 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+18838 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+18839 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 3500(Integer), 500(Integer)
+19054 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+19055 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+19056 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 4000(Integer), 500(Integer)
+19920 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+19921 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+19922 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 4500(Integer), 500(Integer)
+20612 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+20613 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+20613 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 5000(Integer), 500(Integer)
+21005 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+21006 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+21007 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 5500(Integer), 500(Integer)
+21337 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+21338 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+21338 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 6000(Integer), 500(Integer)
+21691 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+21692 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+21693 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 6500(Integer), 500(Integer)
+22830 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+22832 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+22833 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 7000(Integer), 500(Integer)
+25011 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+25013 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+25014 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 7500(Integer), 500(Integer)
+25923 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 500
+25924 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+25925 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 8000(Integer), 500(Integer)
+26529 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 240
+5401 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==>  Preparing: select count(*) from user_place_order_address_info 
+5429 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==> Parameters: 
+5490 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - <==      Total: 1
+5498 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+5499 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 0(Integer), 2000(Integer)
+5879 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 2000
+5880 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+5881 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 2000(Integer), 2000(Integer)
+6577 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 2000
+6578 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+6579 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 4000(Integer), 2000(Integer)
+7307 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 2000
+7308 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+7308 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 6000(Integer), 2000(Integer)
+8636 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 2000
+8638 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+8639 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 8000(Integer), 2000(Integer)
+8717 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 240
+6413 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==>  Preparing: select count(*) from user_place_order_address_info 
+6452 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==> Parameters: 
+6523 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - <==      Total: 1
+6533 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+6534 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 0(Integer), 2000(Integer)
+8135 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 2000
+8137 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+8137 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 2000(Integer), 2000(Integer)
+9198 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 2000
+9200 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+9201 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 4000(Integer), 2000(Integer)
+10949 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 2000
+10950 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+10951 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 6000(Integer), 2000(Integer)
+11389 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 2000
+11390 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+11392 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 8000(Integer), 2000(Integer)
+11823 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 240
+17219 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==>  Preparing: select count(*) from user_place_order_address_info 
+17243 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==> Parameters: 
+17391 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - <==      Total: 1
+17407 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+17409 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 0(Integer), 1000(Integer)
+17739 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+17740 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+17741 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 1000(Integer), 1000(Integer)
+20115 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+20117 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+20117 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 2000(Integer), 1000(Integer)
+20453 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+20454 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+20455 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 3000(Integer), 1000(Integer)
+21041 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+21042 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+21043 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 4000(Integer), 1000(Integer)
+21231 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+21233 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+21234 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 5000(Integer), 1000(Integer)
+21585 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+21586 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+21586 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 6000(Integer), 1000(Integer)
+21769 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+21770 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+21771 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 7000(Integer), 1000(Integer)
+22220 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+22221 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+22222 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 8000(Integer), 1000(Integer)
+22435 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 240
+4664 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==>  Preparing: select count(*) from user_place_order_address_info 
+4688 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==> Parameters: 
+4753 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - <==      Total: 1
+4760 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+4761 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 0(Integer), 1000(Integer)
+4974 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+4976 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+4977 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 1000(Integer), 1000(Integer)
+5106 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+5107 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+5108 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 2000(Integer), 1000(Integer)
+6117 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+6118 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+6118 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 3000(Integer), 1000(Integer)
+6373 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+6374 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+6375 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 4000(Integer), 1000(Integer)
+6509 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+6512 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+6513 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 5000(Integer), 1000(Integer)
+7262 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+7263 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+7264 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 6000(Integer), 1000(Integer)
+7524 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+7525 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+7527 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 7000(Integer), 1000(Integer)
+7841 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+7842 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+7843 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 8000(Integer), 1000(Integer)
+8028 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 240
+4910 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==>  Preparing: select * from user_place_order_address_info 
+4935 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==> Parameters: 
+13204 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - <==      Total: 8240
+7739 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==>  Preparing: select * from user_place_order_address_info 
+7762 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==> Parameters: 
+12769 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - <==      Total: 8240
+19594 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==>  Preparing: select count(*) from user_place_order_address_info 
+19616 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==> Parameters: 
+20195 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - <==      Total: 1
+20203 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+20204 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 0(Integer), 1000(Integer)
+21010 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+21012 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+21013 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 1000(Integer), 1000(Integer)
+25436 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+25437 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+25437 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 2000(Integer), 1000(Integer)
+27130 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+27131 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+27132 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 3000(Integer), 1000(Integer)
+27710 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+27711 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+27712 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 4000(Integer), 1000(Integer)
+28966 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+28967 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+28968 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 5000(Integer), 1000(Integer)
+31654 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+31655 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+31655 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 6000(Integer), 1000(Integer)
+33086 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+33087 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+33088 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 7000(Integer), 1000(Integer)
+33813 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+33814 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+33815 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 8000(Integer), 1000(Integer)
+34596 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 240
+7980 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==>  Preparing: select * from user_place_order_address_info 
+8003 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==> Parameters: 
+12807 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - <==      Total: 8240
+2993 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==>  Preparing: select * from user_place_order_address_info 
+3014 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==> Parameters: 
+3526 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - <==      Total: 35100
+2964 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==>  Preparing: select * from user_place_order_address_info 
+2992 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==> Parameters: 
+3632 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - <==      Total: 35100
+2789 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==>  Preparing: select * from user_place_order_address_info 
+2809 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - ==> Parameters: 
+3328 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfo  - <==      Total: 35100
+2758 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==>  Preparing: select count(*) from user_place_order_address_info 
+2779 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - ==> Parameters: 
+2799 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.getCountData  - <==      Total: 1
+2807 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+2808 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 0(Integer), 1000(Integer)
+2877 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+2880 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+2881 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 1000(Integer), 1000(Integer)
+2919 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+2922 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+2923 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 2000(Integer), 1000(Integer)
+2962 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+2963 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+2963 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 3000(Integer), 1000(Integer)
+3013 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3014 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3015 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 4000(Integer), 1000(Integer)
+3033 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3034 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3035 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 5000(Integer), 1000(Integer)
+3047 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3048 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3048 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 6000(Integer), 1000(Integer)
+3059 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3060 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3060 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 7000(Integer), 1000(Integer)
+3074 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3075 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3075 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 8000(Integer), 1000(Integer)
+3091 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3093 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3093 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 9000(Integer), 1000(Integer)
+3105 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3106 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3107 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 10000(Integer), 1000(Integer)
+3116 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3117 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3118 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 11000(Integer), 1000(Integer)
+3133 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3134 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3135 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 12000(Integer), 1000(Integer)
+3152 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3154 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3155 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 13000(Integer), 1000(Integer)
+3175 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3176 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3177 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 14000(Integer), 1000(Integer)
+3187 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3189 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3189 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 15000(Integer), 1000(Integer)
+3197 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3198 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3199 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 16000(Integer), 1000(Integer)
+3208 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3209 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3209 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 17000(Integer), 1000(Integer)
+3219 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3220 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3220 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 18000(Integer), 1000(Integer)
+3234 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3235 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3236 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 19000(Integer), 1000(Integer)
+3247 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3248 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3248 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 20000(Integer), 1000(Integer)
+3260 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3261 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3261 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 21000(Integer), 1000(Integer)
+3274 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3274 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3275 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 22000(Integer), 1000(Integer)
+3289 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3289 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3290 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 23000(Integer), 1000(Integer)
+3302 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3303 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3304 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 24000(Integer), 1000(Integer)
+3316 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3317 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3318 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 25000(Integer), 1000(Integer)
+3343 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3344 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3345 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 26000(Integer), 1000(Integer)
+3357 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3358 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3358 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 27000(Integer), 1000(Integer)
+3371 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3372 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3372 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 28000(Integer), 1000(Integer)
+3385 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3386 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3387 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 29000(Integer), 1000(Integer)
+3399 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3400 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3400 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 30000(Integer), 1000(Integer)
+3414 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3415 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3415 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 31000(Integer), 1000(Integer)
+3429 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3429 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3430 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 32000(Integer), 1000(Integer)
+3444 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3445 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3446 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 33000(Integer), 1000(Integer)
+3459 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3460 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3460 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 34000(Integer), 1000(Integer)
+3475 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 1000
+3476 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==>  Preparing: select * from user_place_order_address_info limit ?, ? 
+3476 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - ==> Parameters: 35000(Integer), 1000(Integer)
+3486 [main] DEBUG com.edrop.mapper.UserPlaceOrderAddressInfoMapper.selectOrderAddressInfoByPage  - <==      Total: 100
