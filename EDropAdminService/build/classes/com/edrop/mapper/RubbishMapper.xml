@@ -23,5 +23,26 @@
 		from rubbish, type 
 		where rubbish.name like #{name} and rubbish.typeId=type.id
 	</select>
+	<select id="selectAllRubbish" resultType="com.edrop.pojo.Rubbish">
+		select *
+		from rubbish
+		<where>
+			<if test="name != '' and name != null">
+				and name like concat('%','${name}','%')
+			</if>
+			<if test="typeId != null">
+				and typeId like concat('%','${typeId}','%')
+			</if>
+		</where>
+	</select>
+	
+	<insert id="insertRubbish">
+		insert into rubbish(name,typeId) 
+		values( #{name}, #{typeId})
+	</insert>
+	
+	<select id="selRubbishById" resultType="com.edrop.pojo.Rubbish">
+		select * from rubbish where id = #{id}
+	</select>
 
 </mapper>

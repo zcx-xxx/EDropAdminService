@@ -21,10 +21,12 @@
 		/*
 		 * 提交
 		 */
+	
 		$("#submitbutton").click(function(){
+			
 			$.ajax({
 				type: "POST",
-				url: "employee/add",
+				url: "rubbish/update",
 				data: $('#submitForm').serialize(),
 				dataType : "text",
 				cache:false,
@@ -46,32 +48,18 @@
 			/**  关闭弹出iframe  **/
 			window.parent.$.fancybox.close();
 		});
-		
-		var result = 'null';
-		if(result =='success'){
-			/**  关闭弹出iframe  **/
-			window.parent.$.fancybox.close();
-		}
 	});
 	
+
 	
 	/** 表单验证  **/
 	function validateForm(){
-		if($("#username").val()==""){
+		if($("#name").val()==""){
 			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'用户名不能为空', ok:true,});
 			return false;
 		}
-		if($("#phone").val()==""){
-			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'请填写手机号码', ok:true,});
-			return false;
-		}
-		if($("#qq").val()==""){
-			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'填写qq', ok:true,});
-			return false;
-		}
-		
-		if($("#gender").val()==""){
-			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'性别不能为空', ok:true,});
+		if($("#type").val()==""){
+			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'请选择垃圾分类', ok:true,});
 			return false;
 		}
 		return true;
@@ -79,11 +67,10 @@
 </script>
 </head>
 <body>
-<form id="submitForm" name="submitForm" action="/xngzf/archives/initFangyuan.action" method="post">
-	<input type="hidden" name="fyID" value="14458625716623" id="fyID"/>
+<form id="submitForm" name="submitForm" action="user/update" method="post">
 	<div id="container">
 		<div id="nav_links">
-			当前位置：基础数据&nbsp;>&nbsp;<span style="color: #1A5CC6;">添加员工数据</span>
+			当前位置：基础数据&nbsp;>&nbsp;<span style="color: #1A5CC6;">垃圾数据编辑</span>
 			<div id="page_close">
 				<a href="javascript:parent.$.fancybox.close();">
 					<img src="html/images/common/page_close.png" width="20" height="20" style="vertical-align: text-top;"/>
@@ -92,32 +79,43 @@
 		</div>
 		<div class="ui_content">
 			<table  cellspacing="0" cellpadding="0" width="100%" align="left" border="0">
+				<input type="hidden" id="userid" name="userid" value="${rubbish.id }" class="ui_input_txt01"/>
+					
 				<tr>
-					<td class="ui_text_rt" width="80">用户名</td>
+					<td class="ui_text_rt" width="80">垃圾名称</td>
 					<td class="ui_text_lt">
-						<input type="text" id="username" name="username" class="ui_input_txt01"/>
+						<input type="text" id="name" name="name" value="${rubbish.name }" class="ui_input_txt01"/>
 					</td>
 				</tr>
-				<tr>
-					<td class="ui_text_rt">电话</td>
-					<td class="ui_text_lt">
-						<input type="text" id="phone" name="phone"  class="ui_input_txt01"/>
-					</td>
-				</tr>
-				<tr>
-					<td class="ui_text_rt">QQ</td>
-					<td class="ui_text_lt">
-						<input type="text" id="qq" name="qq"  class="ui_input_txt01"/>
-					</td>
-				</tr>
-
 				<tr>
 					<td class="ui_text_rt">性别</td>
 					<td class="ui_text_lt">
-						<select name="gender" id="gender" class="ui_select01">
+						<select name="type" id="type" class="ui_select02">
 							<option value="">--请选择--</option>
-                            <option value="男" selected="selected">男</option>
-                            <option value="女" >女</option>
+							<c:if test="${rubbish.typeId == 1 }">
+                            	<option value="可回收物" selected="selected">可回收物</option>
+                                <option value="有害垃圾">有害垃圾</option>
+                                <option value="湿垃圾">湿垃圾</option>
+                                <option value="干垃圾">干垃圾</option>
+                            </c:if>
+                            <c:if test="${rubbish.typeId == 2 }">
+                            	<option value="可回收物" >可回收物</option>
+                                <option value="有害垃圾" selected="selected">有害垃圾</option>
+                                <option value="湿垃圾">湿垃圾</option>
+                                <option value="干垃圾">干垃圾</option>
+                            </c:if>
+                            <c:if test="${rubbish.typeId == 3 }">
+                            	<option value="可回收物" >可回收物</option>
+                                <option value="有害垃圾">有害垃圾</option>
+                                <option value="湿垃圾" selected="selected">湿垃圾</option>
+                                <option value="干垃圾">干垃圾</option>
+                            </c:if>
+                            <c:if test="${rubbish.typeId == 4 }">
+                            	<option value="可回收物" >可回收物</option>
+                                <option value="有害垃圾">有害垃圾</option>
+                                <option value="湿垃圾">湿垃圾</option>
+                                <option value="干垃圾" selected="selected">干垃圾</option>
+                            </c:if>
                         </select>
 					</td>
 				</tr>

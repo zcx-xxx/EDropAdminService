@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.edrop.mapper.UserPlaceOrderAddressInfoMapper">
+	<resultMap type="userPlaceOrderAddressInfo" id="userPlaceOrderAddressInfoMap">
+		<id column="id" property="id"/>
+		<result column="longitude" property="longitude"/>
+		<result column="latitude" property="latitude"/>
+		<result column="elevation" property="elevation"/>
+	</resultMap>
+	<!-- 通过 year 查询用户操作  -->
+	<select id="selectOrderAddressInfo" resultMap="userPlaceOrderAddressInfoMap">
+		select * from user_place_order_address_info
+	</select>
+</mapper>

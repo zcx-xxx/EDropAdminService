@@ -117,7 +117,7 @@
 	<input type="hidden" name="fyID" value="14458625716623" id="fyID"/>
 	<div id="container">
 		<div id="nav_links">
-			当前位置：基础数据&nbsp;>&nbsp;<span style="color: #1A5CC6;">用户信息编辑</span>
+			当前位置：基础数据&nbsp;>&nbsp;<span style="color: #1A5CC6;">添加用户数据</span>
 			<div id="page_close">
 				<a href="javascript:parent.$.fancybox.close();">
 					<img src="html/images/common/page_close.png" width="20" height="20" style="vertical-align: text-top;"/>

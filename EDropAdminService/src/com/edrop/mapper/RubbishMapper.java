@@ -10,6 +10,8 @@ package com.edrop.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.edrop.pojo.Rubbish;
 
 /**
@@ -22,4 +24,10 @@ import com.edrop.pojo.Rubbish;
 public interface RubbishMapper {
 	//通过名字对垃圾进行模糊查询
 	public List<Rubbish> selRubbishByName(String name);
+
+	public List<Rubbish> selectAllRubbish(@Param("name")String name, @Param("typeId")Integer typeId);
+
+	public void insertRubbish(@Param("name")String name, @Param("typeId")Integer typeId);
+
+	public Rubbish selRubbishById(Integer id);
 }
