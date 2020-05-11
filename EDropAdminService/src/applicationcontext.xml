@@ -65,5 +65,7 @@
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"></constructor-arg>
         <constructor-arg name="executorType" value="SIMPLE"></constructor-arg>
     </bean>
-
+    
+	<!-- 配置 ACFindBeanPostProcessor -->
+	<bean id="aCFindBeanPostProcessor" class="com.edrop.utils.ACFindBeanPostProcessor" />
 </beans>
