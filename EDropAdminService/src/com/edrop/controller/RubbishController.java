@@ -61,12 +61,22 @@ public class RubbishController {
 		return "rubbish_edit";
 	}
 
-//	@RequestMapping("/update")
-//	@ResponseBody
-//	public String update(@RequestParam("userid") Integer id,@RequestParam("username") String username, @RequestParam("qq") String qq,
-//			@RequestParam("imgpath") String imgpath, @RequestParam("phone") String phone,
-//			@RequestParam("gender") String gender) {
-//		employeeService.updateEmployee(id, username, phone, imgpath, qq, gender);
-//		return "success";
-//	}
+	@RequestMapping("/update")
+	@ResponseBody
+	public String update(@RequestParam("id") Integer id,@RequestParam("name") String name, @RequestParam("type") String type) {
+		rubbishService.updateRubbish(id, name, type);
+		return "success";
+	}
+	
+	@RequestMapping("/delete")
+	public ModelAndView delete(@RequestParam("rid") Integer id,
+			@RequestParam(name = "page", defaultValue = "1") Integer page,
+            @RequestParam(name = "size", defaultValue = "5") Integer size) {
+		rubbishService.deleteRubbishById(id);
+		ModelAndView modelAndView = new ModelAndView();
+		PageInfo<Rubbish> pageInfo = rubbishService.getAllRubbish(null,null,page,size);
+		modelAndView.addObject("pageInfo",pageInfo);
+		modelAndView.setViewName("rubbish_find");
+		return modelAndView;
+	}
 }

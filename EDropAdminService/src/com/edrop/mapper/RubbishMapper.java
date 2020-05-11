@@ -30,4 +30,8 @@ public interface RubbishMapper {
 	public void insertRubbish(@Param("name")String name, @Param("typeId")Integer typeId);
 
 	public Rubbish selRubbishById(Integer id);
+
+	public void updateRubbish(@Param("id")Integer id, @Param("name")String name, @Param("typeId")Integer typeId);
+
+	public void deleteRubbishById(Integer id);
 }

@@ -10,4 +10,8 @@ public interface RubbishService {
 
 	Rubbish findRubbishById(Integer id);
 
+	void updateRubbish(Integer id, String name, String type);
+
+	void deleteRubbishById(Integer id);
+
 }

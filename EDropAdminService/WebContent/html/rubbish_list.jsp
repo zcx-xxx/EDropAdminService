@@ -111,7 +111,7 @@
 	function del(rid){
 		$.ajax({
 			type: "POST",
-			url: "employee/delete",
+			url: "rubbish/delete",
 			data: "rid=" + rid ,
 			dataType : "html",
 			cache:false,

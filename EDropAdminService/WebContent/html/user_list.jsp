@@ -23,7 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <title>信息管理系统</title>
 <script type="text/javascript">
 	$(function(){
-		// 登录
 		$("#find_user").click(function(){
 			var username = $("#username").val();
 			var phone = $("#phone").val();

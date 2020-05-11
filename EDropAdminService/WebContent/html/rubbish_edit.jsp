@@ -79,7 +79,7 @@
 		</div>
 		<div class="ui_content">
 			<table  cellspacing="0" cellpadding="0" width="100%" align="left" border="0">
-				<input type="hidden" id="userid" name="userid" value="${rubbish.id }" class="ui_input_txt01"/>
+				<input type="hidden" id="id" name="id" value="${rubbish.id }" class="ui_input_txt01"/>
 					
 				<tr>
 					<td class="ui_text_rt" width="80">垃圾名称</td>

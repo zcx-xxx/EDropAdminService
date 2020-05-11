@@ -60,4 +60,24 @@ public class RubbishServiceImpl implements RubbishService {
 		return rubbishMapper.selRubbishById(id);
 	}
 
+	public void updateRubbish(Integer id, String name, String type) {
+		Integer typeId = null;
+		if (type != "" && type != null) {
+			if (type.equals("可回收物")) {
+				typeId = 1;
+			}else if (type.equals("有害垃圾")) {
+				typeId = 2;
+			}else if (type.equals("湿垃圾")) {
+				typeId = 3;
+			}else if (type.equals("干垃圾")) {
+				typeId = 4;
+			}
+		}
+		rubbishMapper.updateRubbish(id,name,typeId);
+	}
+
+	public void deleteRubbishById(Integer id) {
+		rubbishMapper.deleteRubbishById(id);
+	}
+
 }

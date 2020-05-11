@@ -44,5 +44,23 @@
 	<select id="selRubbishById" resultType="com.edrop.pojo.Rubbish">
 		select * from rubbish where id = #{id}
 	</select>
-
+	
+	<update id="updateRubbish">
+		update rubbish
+	 	<set>
+	 		<if test="name != '' and name != null">
+	 			name = #{name},
+	 		</if>
+	 		<if test="typeId != '' and typeId != null">
+	 			typeId = #{typeId},
+	 		</if>
+	 	</set>
+	 	where id = #{id}
+	</update>
+	
+	<delete id="deleteRubbishById">
+		delete 
+		from rubbish
+		where id = #{id}
+	</delete>
 </mapper>
