@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.edrop.mapper.FeedbackMapper">
+	<resultMap type="feedback" id="feedbackMap">
+		<id column="id" property="id"/>
+		<result column="content" property="content"/>
+		<result column="publish_time" property="publishTime"/>
+		<result column="is_readed" property="isReaded"/>
+		<result column="is_deleted" property="isDeleted"/>
+		<result column="user_id" property="userId"/>
+		<association property="user" column="{id=user_id}" 
+		select="com.edrop.mapper.UserMapper.selUserInfoById"/>
+	</resultMap>
+	<!-- 根据是否被读查询未被删除的反馈 -->
+	<select id="getFeedbacksByIsReaded" resultMap="feedbackMap">
+		select * from feedback where is_readed=#{isReaded} and is_deleted=0
+	</select>
+	<!-- 跟新已读状态 -->
+	<update id="updateIsReadedState">
+		update feedback set is_readed=1 where id=#{feedbackId}
+	</update>
+	<!-- 更新删除状态 -->
+	<update id="updateIsDeletedState">
+		update feedback set is_deleted=1 where id=#{feedbackId}
+	</update>
+</mapper>
