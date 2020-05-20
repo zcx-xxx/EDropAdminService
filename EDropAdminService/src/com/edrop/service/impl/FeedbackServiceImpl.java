@@ -1,5 +1,6 @@
 package com.edrop.service.impl;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -25,6 +26,11 @@ public class FeedbackServiceImpl implements FeedbackService{
 	@Override
 	public void markDeleted(Integer feedbackId) {
 		feedbackMapper.updateIsDeletedState(feedbackId);
+		return;
+	}
+	@Override
+	public void addFeedback(String content, Integer userId) {
+		feedbackMapper.addFeedback(content, userId, new Timestamp(System.currentTimeMillis()), false, false);
 		return;
 	}
 }

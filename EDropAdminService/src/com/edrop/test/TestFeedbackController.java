@@ -42,11 +42,20 @@ public class TestFeedbackController extends AbstractTransactionalJUnit4SpringCon
 	@Test
 	public void testGetAllFeedbacks() throws UniformInterfaceException, IOException {
 		String isReaded = "0";
-		FeedbackController feedbackController = (FeedbackController) this.applicationContext.getBean("feedbackController");
+		FeedbackController feedbackController = 
+				(FeedbackController) this.applicationContext.getBean("feedbackController");
 		String ans = feedbackController.getAllFeedbackByIsReaded(isReaded);
 		System.out.println(ans);
 		return;
 //		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testAddFeedback() throws IOException {
+//		FeedbackController feedbackController = 
+//				(FeedbackController) this.applicationContext.getBean("feedbackController");
+//		feedbackController.addFeedback(response, "zcxhaha", "1024", null, null);
+		return;
 	}
 
 }

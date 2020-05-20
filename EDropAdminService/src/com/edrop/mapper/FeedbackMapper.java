@@ -1,5 +1,6 @@
 package com.edrop.mapper;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
@@ -13,4 +14,8 @@ public interface FeedbackMapper {
 	public Integer updateIsReadedState(@Param("feedbackId")Integer feedbackId);
 	// 更新删除状态
 	public Integer updateIsDeletedState(@Param("feedbackId")Integer feedbackId);
+	// 添加反馈信息
+	public Integer addFeedback(@Param("content")String content, @Param("userId")Integer userId,
+			@Param("publishTime")Timestamp publishTime, @Param("isReaded")Boolean isReaded,
+			@Param("isDeleted")Boolean isDeleted);
 }

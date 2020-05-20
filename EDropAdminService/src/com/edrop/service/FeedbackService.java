@@ -32,4 +32,15 @@ public interface FeedbackService {
 	 * @throws
 	 */
 	public void markDeleted(Integer feedbackId);
+	
+	/**
+	 * 添加反馈信息
+	 * @Title: addFeedback   
+	 * @Description: TODO(这里用一句话描述这个方法的作用)   
+	 * @param: @param content
+	 * @param: @param userId      
+	 * @return: void      
+	 * @throws
+	 */
+	public void addFeedback(String content, Integer userId);
 }

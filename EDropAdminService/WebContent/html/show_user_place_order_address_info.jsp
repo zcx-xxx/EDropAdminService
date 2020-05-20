@@ -13,11 +13,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="html/scripts/echarts/echarts.min.js"></script>
 <script type="text/javascript" src="html/scripts/jquery/jquery-1.7.1.js"></script>
 <!--引入百度地图-->
-<script  type="text/javascript" 
-src="http://api.map.baidu.com/api?v=2.0&ak=DDLwA2CBFGHRpxFzFx3K5KnBQtHP4hte" ></script>
+<script  type="text/javascript" src="html/scripts/baidu_map/getscript.js" ></script>
+<!-- <script  type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DDLwA2CBFGHRpxFzFx3K5KnBQtHP4hte" ></script> -->
 <!--引入百度热力图-->
-<script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="html/scripts/baidu_map/Heatmap_min.js"></script>
+<script type="text/javascript" src="html/scripts/baidu_map/bmap.min.js"></script>
+<!-- <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script> -->
+<!-- <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script> -->
 <script type="text/javascript">
 	var str = "[[]]";
 	$(function() {

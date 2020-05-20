@@ -41,4 +41,10 @@ public class TestFeedbackService {
 		feedbackServiceImpl.markDeleted(1);
 		return;
 	}
+	@Test
+	public void testAddFeedback() {
+//		feedbackServiceImpl.markDeleted(1);
+		feedbackServiceImpl.addFeedback("what,fuck!!!", 1024);
+		return;
+	}
 }
