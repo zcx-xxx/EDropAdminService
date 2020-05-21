@@ -5,7 +5,38 @@
 	
 <mapper namespace="com.edrop.mapper.OrderMapper">
 <!-- 插入用户信息 -->
+
+	<resultMap type="order" id="orderMap">
+		<id column="id" property="id"/>
+		<result column="number" property="number"/>
+		<result column="userId" property="userId"/>
+		<result column="employeeId" property="employeeId"/>
+		<result column="state" property="state"/>
+		<result column="ouname" property="ouname"/>
+		<result column="outelephone" property="outelephone"/>
+		<result column="orderAddress" property="orderAddress"/>
+		<result column="createTime" property="createTime"/>
+		<result column="finishTime" property="finishTime"/>
+		<result column="reserveTime" property="reserveTime"/>
+	</resultMap>
 	<insert id="insOrderInfo">
 		insert into orders values(default, #{param1}, #{param2}, #{param3}, #{param4}, #{param5}, #{param6}, #{param7}, #{param8}, #{param9}, #{param10},#{param11}, #{param12})
 	</insert>
+	
+	<select id="selectAllOrder" resultMap="orderMap">
+		select *
+		from orders
+		<where>
+			<if test="number != '' and number != null">
+				and number like concat('%','${number}','%')
+			</if>
+			<if test="ouname != '' and ouname != null">
+				and ouname like concat('%','${ouname}','%')
+			</if>
+			<if test="outelephone != '' and outelephone != null">
+				and outelephone like concat('%','${outelephone}','%')
+			</if>
+		</where>
+		
+	</select>
 </mapper>

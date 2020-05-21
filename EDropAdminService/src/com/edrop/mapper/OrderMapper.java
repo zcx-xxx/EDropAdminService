@@ -11,6 +11,7 @@ package com.edrop.mapper;
 import java.sql.Timestamp;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -74,4 +75,7 @@ public interface OrderMapper {
 	 */
 	@Select("select * from orders where employeeId=#{param1} and state!=-1")
 	public List<Order> selOrdersByEmployeeId(Integer eid);
+	
+	//查询所有的用户信息
+	public List<Order> selectAllOrder(@Param("number")String number,@Param("ouname")String ouname,@Param("outelephone")String outelephone);
 }
