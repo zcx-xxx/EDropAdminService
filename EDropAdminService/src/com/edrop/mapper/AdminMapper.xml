@@ -20,4 +20,9 @@
 	<select id="selectAdminByUserName" resultMap="adminMap">
 		select * from admin where username like #{param1}
 	</select>
+	
+	<!-- select all admin info -->
+	<select id="selectAllAdminInfo" resultMap="adminMap">
+		select * from admin
+	</select>
 </mapper>

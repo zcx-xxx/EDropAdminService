@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.edrop.mapper.ArticleMapper">
+	<resultMap type="article" id="articleMap">
+		<id column="id" property="id"/>
+		<result column="article_title" property="articleTitle"/>
+		<result column="article_description" property=""/>
+		<result column="tag_id" property="tagId"/>
+		<result column="content_bytes" property="contentBytes"/>
+		<result column="decode_table" property="decodeTable"/>
+		<result column="user_id" property="userId"/>
+		<result column="publish_date" property="publishDate"/>
+		<result column="article_like_count" property="articleLikeCount"/>
+		<result column="article_comment_count" property="articleCommentCount"/>
+		<result column="article_views" property="articleViews"/>
+	</resultMap>
+
+	<!-- 测试添加文章 -->
+	<insert id="addArticle">
+		insert into article(content_bytes, decode_table) values(#{contentBytes},#{decodeTable})
+	</insert>
+	<!-- 查询文章 -->
+	<select id="selectArticleById" resultMap="articleMap">
+		select * from article where id = #{id} 
+	</select>
+</mapper>

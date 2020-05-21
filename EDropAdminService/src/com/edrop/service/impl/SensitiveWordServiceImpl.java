@@ -24,4 +24,9 @@ public class SensitiveWordServiceImpl implements SensitiveWordService{
 		}
 		return ans;
 	}
+
+	@Override
+	public Integer addKeyWord(String content) {
+		return keyWordsMapper.addKeyWord(content);
+	}
 }

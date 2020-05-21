@@ -1,6 +1,7 @@
 package com.edrop.service.impl;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -59,6 +60,12 @@ public class AdminServiceImpl implements AdminService{
 			state = "success";
 		}
 		return state;
+	}
+
+	@Override
+	public List<Admin> getAllAdminInfo() {
+		List<Admin> ans = adminMapper.selectAllAdminInfo();
+		return ans;
 	}
 	
 }

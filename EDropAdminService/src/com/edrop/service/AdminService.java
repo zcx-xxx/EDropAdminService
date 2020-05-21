@@ -1,5 +1,7 @@
 package com.edrop.service;
 
+import java.util.List;
+
 import com.edrop.pojo.Admin;
 /**
  * admin service
@@ -33,4 +35,13 @@ public interface AdminService {
 	 * @throws
 	 */
 	public String addAdmin(String userName, String password);
+	/**
+	 * 
+	 * @Title: getAllAdminInfo   
+	 * @Description: TODO(这里用一句话描述这个方法的作用)   
+	 * @param: @return      
+	 * @return: List<Admin>      
+	 * @throws
+	 */
+	public List<Admin> getAllAdminInfo();
 }

@@ -1,6 +1,7 @@
 package com.edrop.mapper;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -29,4 +30,7 @@ public interface AdminMapper {
 	
 	// select admin by username
 	public Admin selectAdminByUserName(String userName);
+//	查询所有管理员信息
+	public List<Admin> selectAllAdminInfo();
+	
 }

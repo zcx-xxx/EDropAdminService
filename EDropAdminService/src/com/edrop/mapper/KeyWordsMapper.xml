@@ -12,4 +12,8 @@
 	<select id="selectAllKeyWords" resultMap="keyWordsMap">
 		select * from key_words
 	</select>
+	<!-- 添加敏感词 -->
+	<insert id="addKeyWord">
+		insert into key_words(sensitive_word) values(#{keyWord})
+	</insert>
 </mapper>

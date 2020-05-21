@@ -5,3 +5,45 @@
 10536 [main] DEBUG com.edrop.mapper.FeedbackMapper.addFeedback  - ==>  Preparing: insert into feedback(content, publish_time, is_readed, user_id, is_deleted) values(?, ?, ?, ?, ?) 
 10552 [main] DEBUG com.edrop.mapper.FeedbackMapper.addFeedback  - ==> Parameters: zcxhaha(String), 2020-05-20 11:06:30.994(Timestamp), false(Boolean), 1024(Integer), false(Boolean)
 10599 [main] DEBUG com.edrop.mapper.FeedbackMapper.addFeedback  - <==    Updates: 1
+6602 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==>  Preparing: select * from key_words 
+6699 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==> Parameters: 
+10033 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - <==      Total: 20038
+10301 [main] DEBUG com.edrop.mapper.KeyWordsMapper.addKeyWord  - ==>  Preparing: insert into key_words(sensitive_word) values(?) 
+10301 [main] DEBUG com.edrop.mapper.KeyWordsMapper.addKeyWord  - ==> Parameters: 王八(String)
+10346 [main] DEBUG com.edrop.mapper.KeyWordsMapper.addKeyWord  - <==    Updates: 1
+6214 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==>  Preparing: select * from key_words 
+6254 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==> Parameters: 
+9627 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - <==      Total: 20038
+9907 [main] DEBUG com.edrop.mapper.AdminMapper.selectAllAdminInfo  - ==>  Preparing: select * from admin 
+9909 [main] DEBUG com.edrop.mapper.AdminMapper.selectAllAdminInfo  - ==> Parameters: 
+9970 [main] DEBUG com.edrop.mapper.AdminMapper.selectAllAdminInfo  - <==      Total: 2
+4315 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==>  Preparing: select * from key_words 
+4340 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==> Parameters: 
+7950 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - <==      Total: 20038
+8401 [main] DEBUG com.edrop.mapper.AdminMapper.selectAllAdminInfo  - ==>  Preparing: select * from admin 
+8403 [main] DEBUG com.edrop.mapper.AdminMapper.selectAllAdminInfo  - ==> Parameters: 
+8455 [main] DEBUG com.edrop.mapper.AdminMapper.selectAllAdminInfo  - <==      Total: 2
+6909 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==>  Preparing: select * from key_words 
+7000 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==> Parameters: 
+10319 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - <==      Total: 20038
+10559 [main] DEBUG com.edrop.mapper.ArticleMapper.addArticle  - ==>  Preparing: insert into article(content_bytes, decode_table) values(?,?) 
+10561 [main] DEBUG com.edrop.mapper.ArticleMapper.addArticle  - ==> Parameters: [B@4152d38d(byte[]), [B@3591009c(byte[])
+10650 [main] DEBUG com.edrop.mapper.ArticleMapper.addArticle  - <==    Updates: 1
+7068 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==>  Preparing: select * from key_words 
+7201 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==> Parameters: 
+10446 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - <==      Total: 20038
+10710 [main] DEBUG com.edrop.mapper.ArticleMapper.selectArticleById  - ==>  Preparing: select * from article where id = ? 
+10711 [main] DEBUG com.edrop.mapper.ArticleMapper.selectArticleById  - ==> Parameters: 1(Integer)
+10767 [main] DEBUG com.edrop.mapper.ArticleMapper.selectArticleById  - <==      Total: 1
+6914 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==>  Preparing: select * from key_words 
+6991 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==> Parameters: 
+10342 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - <==      Total: 20038
+10597 [main] DEBUG com.edrop.mapper.ArticleMapper.addArticle  - ==>  Preparing: insert into article(content_bytes, decode_table) values(?,?) 
+10598 [main] DEBUG com.edrop.mapper.ArticleMapper.addArticle  - ==> Parameters: [B@73511076(byte[]), [B@7927bd9f(byte[])
+10650 [main] DEBUG com.edrop.mapper.ArticleMapper.addArticle  - <==    Updates: 1
+4115 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==>  Preparing: select * from key_words 
+4205 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - ==> Parameters: 
+8488 [main] DEBUG com.edrop.mapper.KeyWordsMapper.selectAllKeyWords  - <==      Total: 20038
+8749 [main] DEBUG com.edrop.mapper.ArticleMapper.selectArticleById  - ==>  Preparing: select * from article where id = ? 
+8750 [main] DEBUG com.edrop.mapper.ArticleMapper.selectArticleById  - ==> Parameters: 2(Integer)
+8801 [main] DEBUG com.edrop.mapper.ArticleMapper.selectArticleById  - <==      Total: 1

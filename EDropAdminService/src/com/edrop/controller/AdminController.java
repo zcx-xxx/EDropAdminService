@@ -1,6 +1,7 @@
 package com.edrop.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.alibaba.fastjson.JSONObject;
+import com.edrop.pojo.Admin;
 import com.edrop.service.AdminService;
 import com.google.gson.Gson;
 
@@ -62,5 +64,13 @@ public class AdminController {
 		JSONObject json = new JSONObject();
 		json.put("state", res);
 		response.getWriter().print(json.toJSONString());
+	}
+	
+	@RequestMapping("/get_all_admin_info")
+	public String getAllAdminInfo() {
+		List<Admin> list = adminServiceImpl.getAllAdminInfo();
+		Gson gson = new Gson();
+		String ans = gson.toJson(list);
+		return ans;
 	}
 }
