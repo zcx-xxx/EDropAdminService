@@ -20,7 +20,16 @@
 
 	<!-- 测试添加文章 -->
 	<insert id="addArticle">
-		insert into article(content_bytes, decode_table) values(#{contentBytes},#{decodeTable})
+		insert into 
+		article(article_title,article_description,content_bytes, decode_table,publish_date,article_like_count,article_comment_count,article_views) 
+		values(
+			<if test="title != '' and title != null">
+	 			#{title},
+	 		</if>
+	 		<if test="description != '' and description != null">
+	 			#{description},
+	 		</if>
+	 		#{contentBytes},#{decodeTable},#{time},0,0,0)
 	</insert>
 	<!-- 查询文章 -->
 	<select id="selectArticleById" resultMap="articleMap">

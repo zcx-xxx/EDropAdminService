@@ -22,9 +22,10 @@ public class ArticleServiceImpl implements ArticleService{
 	@Resource
 	private HuffmanCodeUtil huffmanCodeUtil;
 	@Override
-	public Integer addArticle(String content) {
-		HuffmanCodeUtil.HuffmanCodeResult result = huffmanCodeUtil.zipFile(content);
-		Integer idx = articleMapper.addArticle(result.getHuffmanBytes(), toByteArray(result.getHuffmanCodes()));
+	public Integer addArticle(Article article) {
+		HuffmanCodeUtil.HuffmanCodeResult result = huffmanCodeUtil.zipFile(article.getContent());
+		System.out.println(article.getArticleTitle()+article.getArticleTitle());
+		Integer idx = articleMapper.addArticle(article.getArticleTitle(),article.getArticleDescription(),result.getHuffmanBytes(), toByteArray(result.getHuffmanCodes()),article.getPublishDate());
 		return idx;
 	}
 	

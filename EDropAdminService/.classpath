@@ -60,6 +60,10 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/pagehelper-4.1.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsqlparser-0.9.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ufile-client-java-2.1.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ufile-core-2.1.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/okhttp-3.14.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/okio-1.13.0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
