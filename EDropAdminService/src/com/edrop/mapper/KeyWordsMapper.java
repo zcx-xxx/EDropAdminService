@@ -11,5 +11,6 @@ public interface KeyWordsMapper {
 	public List<KeyWords> selectAllKeyWords();
 //	添加敏感词
 	public Integer addKeyWord(@Param("keyWord")String keyWord);
-	
+//	根据内容查询敏感词
+	public KeyWords selectKeyWordsByContent(@Param("content")String content);
 }

@@ -16,4 +16,8 @@
 	<insert id="addKeyWord">
 		insert into key_words(sensitive_word) values(#{keyWord})
 	</insert>
+	<!-- 根据内容查询敏感词 -->
+	<select id="selectKeyWordsByContent" resultMap="keyWordsMap">
+		select * from key_words where sensitive_word like #{content}
+	</select>
 </mapper>

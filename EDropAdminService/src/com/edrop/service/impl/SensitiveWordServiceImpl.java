@@ -10,10 +10,13 @@ import org.springframework.stereotype.Service;
 import com.edrop.mapper.KeyWordsMapper;
 import com.edrop.pojo.KeyWords;
 import com.edrop.service.SensitiveWordService;
+import com.edrop.utils.ACFind;
 @Service
 public class SensitiveWordServiceImpl implements SensitiveWordService{
 	@Resource
 	private KeyWordsMapper keyWordsMapper;
+	@Resource
+	private ACFind acFind;
 
 	@Override
 	public List<String> getKeywords() {
@@ -27,6 +30,12 @@ public class SensitiveWordServiceImpl implements SensitiveWordService{
 
 	@Override
 	public Integer addKeyWord(String content) {
-		return keyWordsMapper.addKeyWord(content);
+		Integer ans = 1;
+		KeyWords key = keyWordsMapper.selectKeyWordsByContent(content);
+		if (key == null) {
+			ans = keyWordsMapper.addKeyWord(content);
+			acFind.addWordToTree(acFind.getRoot(), content);
+		}
+		return ans;
 	}
 }

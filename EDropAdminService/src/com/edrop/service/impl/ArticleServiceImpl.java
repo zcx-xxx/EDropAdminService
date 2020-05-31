@@ -5,13 +5,17 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 import com.edrop.mapper.ArticleMapper;
+import com.edrop.mapper.UserArticleIsLikeMapper;
 import com.edrop.pojo.Article;
 import com.edrop.service.ArticleService;
 import com.edrop.utils.HuffmanCodeUtil;
@@ -21,11 +25,19 @@ public class ArticleServiceImpl implements ArticleService{
 	private ArticleMapper articleMapper;
 	@Resource
 	private HuffmanCodeUtil huffmanCodeUtil;
+	@Resource 
+	private UserArticleIsLikeMapper userArticleIsLikeMapper; 
 	@Override
 	public Integer addArticle(Article article) {
 		HuffmanCodeUtil.HuffmanCodeResult result = huffmanCodeUtil.zipFile(article.getContent());
 		System.out.println(article.getArticleTitle()+article.getArticleTitle());
 		Integer idx = articleMapper.addArticle(article.getArticleTitle(),article.getArticleDescription(),result.getHuffmanBytes(), toByteArray(result.getHuffmanCodes()),article.getPublishDate());
+		return idx;
+	}
+	
+	public Integer addArticleTest(String content) {
+		HuffmanCodeUtil.HuffmanCodeResult result = huffmanCodeUtil.zipFile(content);
+		Integer idx = articleMapper.addArticleTest(result.getHuffmanBytes(), toByteArray(result.getHuffmanCodes()));
 		return idx;
 	}
 	
@@ -71,6 +83,52 @@ public class ArticleServiceImpl implements ArticleService{
 		Map<Byte, String> huffmanCodes = (Map<Byte, String>)obj;
 		// 解码
 		String ans = HuffmanCodeUtil.unZipFile(huffmanCodes, article.getContentBytes());
+		System.out.println(ans.length());
 		return ans;
+	}
+	@Override
+	public String getArticleBriefInfo(Integer userId, Integer pageNum, Integer pageSize) {
+		// 查询文章简要信息
+		List<Article> list = articleMapper.selectArticleBriefInfo((pageNum - 1) * pageSize, pageSize);
+		// 报存需要返回的结果
+		JSONObject ans = new JSONObject();
+		JSONArray array = new JSONArray();
+		for (Article item : list) {
+			Integer idx = item.getId();
+			// 查询该用户是否点赞 并封装
+			Integer res = userArticleIsLikeMapper.selectUserArticleIsExits(userId, idx);
+			JSONObject obj = new JSONObject(); 
+			if (res == 1) {
+				obj.put("is_like", "1");
+			} else {
+				obj.put("is_like", "0");
+			}
+			obj.put("article_id", idx);
+			obj.put("publish_date", item.getPublishDate() == null ? "" : item.getPublishDate());
+			obj.put("article_description", item.getArticleDescription() == null ? "" : item.getArticleDescription());
+			obj.put("like_counts", item.getArticleLikeCount() == null ? "0" : item.getArticleLikeCount());
+			obj.put("comment_counts", item.getArticleCommentCount() == null ? "0" : item.getArticleCommentCount());
+			// 数组中追加元素
+			array.put(obj);
+		}
+		// 封装数组
+//		ans.append("articles", array);
+		ans.put("articles", array);
+		// 返回结果
+		return ans.toString();
+	}
+
+	@Override
+	public Integer likeOrCancelLike(Integer userId, Integer articleId) {
+		Integer count = userArticleIsLikeMapper.selectUserArticleIsExits(userId, articleId);
+		Integer state = 0;
+		if (count == 0) {
+			state = userArticleIsLikeMapper.insertItem(userId, articleId);
+			articleMapper.updateLikeCounts(articleId, 1);
+		} else {
+			state = userArticleIsLikeMapper.deleteItem(userId, articleId);
+			articleMapper.updateLikeCounts(articleId, -1);
+		}
+		return state;
 	}
 }

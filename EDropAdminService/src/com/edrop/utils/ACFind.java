@@ -35,7 +35,9 @@ public class ACFind {
 //		// System.out.println(index);
 // 
 //	}
-
+	public TrieNode getRoot() {
+		return root;
+	}
 	public void acFindInit() {
 		List<String> keywords = sensitiveWordServiceImpl.getKeywords();
 		root = buildTree(keywords);
@@ -110,7 +112,7 @@ public class ACFind {
 	/**
 	 * 添加节点
 	 */
-	private void addWordToTree(TrieNode rootNode, String word) {
+	public void addWordToTree(TrieNode rootNode, String word) {
 		if (word == null || word.length() == 0) {
 			return;
 		}

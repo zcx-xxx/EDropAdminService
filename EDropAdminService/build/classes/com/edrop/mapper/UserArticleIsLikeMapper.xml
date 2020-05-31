@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.edrop.mapper.UserArticleIsLikeMapper">
+<!-- 插入用户信息 -->
+	<select id="selectUserArticleIsExits" resultType="java.lang.Integer">
+		select count(*) from user_article_islike where user_id=#{userId} and article_id=#{articleId}
+	</select>
+	<!-- 增加项 -->
+	<insert id="insertItem">
+		insert into user_article_islike(user_id, article_id) values(#{userId}, #{articleId})
+	</insert>
+	<!-- 删除项 -->
+	<delete id="deleteItem">
+		delete from user_article_islike where user_id=#{userId} and article_id=#{articleId}
+	</delete>
+</mapper>

@@ -1,4 +1,5 @@
 package com.edrop.utils;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -38,18 +39,32 @@ public class HuffmanCodeUtil {
 	/**
 	 * @param zipFile 准备解压的文件
 	 * @param dstFile 将文件解压到哪个路径
+	 * @throws UnsupportedEncodingException 
 	 */
 	public static String unZipFile(Map<Byte, String> huffmanCodes, byte[] huffmanBytes) {
 		byte[] bytes = decode(huffmanCodes, huffmanBytes);
-		return new String(bytes);		
+		try {
+			return new String(bytes, "utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		return "";
 	}
 	/**
 	 * @param srcFile 你传入的希望压缩的文件的全路径
 	 * @param dstFile 我们压缩后将压缩文件放到哪个目录
+	 * @throws UnsupportedEncodingException 
 	 */
 	public static HuffmanCodeResult zipFile(String content) {
+		huffmanCodes.clear();
 		// 获取字节数组
-		byte[] b = content.getBytes();
+		byte[] b = null;
+		try {
+			b = content.getBytes("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		//直接对源文件压缩
 		byte[] huffmanBytes = huffmanZip(b);
 		// 封装将结果返回

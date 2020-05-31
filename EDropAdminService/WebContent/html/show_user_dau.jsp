@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		                }
 		            },
 		            dataZoom: [{
-		                startValue: '2020-01-01'
+		            	endValue: '2018-7-1'
 		            }, {
 		                type: 'inside'
 		            }],

@@ -7,7 +7,7 @@
 	<resultMap type="article" id="articleMap">
 		<id column="id" property="id"/>
 		<result column="article_title" property="articleTitle"/>
-		<result column="article_description" property=""/>
+		<result column="article_description" property="articleDescription"/>
 		<result column="tag_id" property="tagId"/>
 		<result column="content_bytes" property="contentBytes"/>
 		<result column="decode_table" property="decodeTable"/>
@@ -16,6 +16,14 @@
 		<result column="article_like_count" property="articleLikeCount"/>
 		<result column="article_comment_count" property="articleCommentCount"/>
 		<result column="article_views" property="articleViews"/>
+	</resultMap>
+<!-- 	文章（文章id，发布时间，文章简介，是否点过赞，总点赞数量，总评论数量） -->
+	<resultMap type="article" id="articleBriefInfoMap">
+		<id column="id" property="id"/>
+		<result column="publish_date" property="publishDate"/>
+		<result column="article_description" property="articleDescription"/>
+		<result column="article_like_count" property="articleLikeCount"/>
+		<result column="article_comment_count" property="articleCommentCount"/>
 	</resultMap>
 
 	<!-- 测试添加文章 -->
@@ -31,8 +39,19 @@
 	 		</if>
 	 		#{contentBytes},#{decodeTable},#{time},0,0,0)
 	</insert>
+	<insert id="addArticleTest">
+		insert into article(content_bytes, decode_table) values(#{contentBytes},#{decodeTable})
+	</insert>
 	<!-- 查询文章 -->
 	<select id="selectArticleById" resultMap="articleMap">
 		select * from article where id = #{id} 
 	</select>
+	<!-- 查询文章的简要信息 -->
+	<select id="selectArticleBriefInfo" resultMap="articleBriefInfoMap">
+		select * from article order by id desc limit #{start},#{counts}
+	</select>	
+	<!-- 跟新文章点赞数量 -->
+	<update id="updateLikeCounts">
+		update article set article_like_count=article_like_count+#{likeDelta} where id=#{articleId}
+	</update>
 </mapper>
