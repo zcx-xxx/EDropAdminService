@@ -54,4 +54,7 @@
 	<update id="updateLikeCounts">
 		update article set article_like_count=article_like_count+#{likeDelta} where id=#{articleId}
 	</update>
+	<update id="updateCommentCounts">
+		update article set article_comment_count=article_comment_count+#{delta} where id=#{articleId}
+	</update>
 </mapper>

@@ -22,4 +22,7 @@ public interface ArticleMapper {
 	
 	public Integer addArticleTest(@Param("contentBytes")byte[] contentBytes, 
 			@Param("decodeTable")byte[] decodeTable);
+	
+	// 更新评论数量
+	public Integer updateCommentCounts(@Param("articleId")Integer articleId, @Param("delta")Integer delta);
 }

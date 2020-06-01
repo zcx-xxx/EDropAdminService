@@ -30,7 +30,9 @@ public class TestArticleService {
 	
 	@Test
 	public void selectContent() {
-		String ans = articleServiceImpl.selectArticleById(24);
+		String ans = articleServiceImpl.selectArticleById(6);
 		System.out.println(ans);
 	}
+	
+//	publi
 }

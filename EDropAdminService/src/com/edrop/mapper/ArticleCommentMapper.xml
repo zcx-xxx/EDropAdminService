@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.edrop.mapper.ArticleCommentMapper">
+	<resultMap type="articleComment" id="articleCommentMap">
+		<id property="id" column="id"/>
+		<result property="userId" column="user_id"/>
+		<result property="articleId" column="article_id"/>
+		<result property="commentLikeCount" column="comment_like_count"/>
+		<result property="commentDate" column="comment_date"/>
+		<result property="commentContent" column="comment_content"/>
+		<result property="parentCommentId" column="parent_comment_id"/>
+		<association property="user" select="com.edrop.mapper.UserMapper.selUserInfoById" column="id=user_id"/>
+	</resultMap>
+	
+	<!-- 插入评论 -->
+	<insert id="insertArticleComment">
+		insert into article_comment(user_id, article_id, comment_date, comment_content, parent_comment_id)
+		values(#{userId}, #{articleId}, #{commentDate}, #{commentContent}, #{parentCommentId})
+	</insert>
+	<!-- 查询指定文章得所有评论 -->
+	<select id="selectAllComment" resultMap="articleCommentMap">
+		select * from article_comment where article_id=#{articleId} order by id desc
+	</select>
+</mapper>

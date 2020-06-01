@@ -5,6 +5,7 @@ import java.io.UnsupportedEncodingException;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,7 +22,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.edrop.dto.FileDTO;
 import com.edrop.pojo.Article;
+import com.edrop.service.ArticleCommentService;
 import com.edrop.service.ArticleService;
+import com.edrop.utils.ACFind;
 import com.edrop.utils.UCloudProvider;
 
 @Controller
@@ -32,6 +35,10 @@ public class CommunityController {
     private UCloudProvider uCloudProvider;
 	@Autowired
     private ArticleService articleService;
+	@Resource
+	private ACFind aCFind;
+	@Resource
+	private ArticleCommentService articleCommentServiceImpl;
 	
     @RequestMapping("/upload")
     @ResponseBody
@@ -63,7 +70,7 @@ public class CommunityController {
             @RequestParam(value = "id",required = false)Integer id,
             HttpServletRequest request, Model model) {
 //    	System.out.println(request.getCharacterEncoding());
-//    	System.out.println("content: " + content);
+    	System.out.println("content: " + content);
         Article article = new Article();
         article.setArticleTitle(title);
         article.setArticleDescription(description);
@@ -111,7 +118,8 @@ public class CommunityController {
 //    @ResponseBody
     @RequestMapping("/get_article_detail_info")
     public void getArticleDetailInfo(String articleId, HttpServletResponse response) {
-    	response.setCharacterEncoding("UTF_8");
+//    	response.setCharacterEncoding("UTF_8");
+//    	String articleId = request.getParameter("articleId");
     	String ans = articleService.selectArticleById(Integer.valueOf(articleId));
     	if (ans == null) ans = "";
     	JSONObject json = new JSONObject();
@@ -123,8 +131,8 @@ public class CommunityController {
 		}
     	return;
     }
-//    /community/like_or_cancel_like
-    @RequestMapping("like_or_cancel_like")
+
+    @RequestMapping("/like_or_cancel_like")
     public void likeOrCancelLike(String userId, String articleId, HttpServletResponse response) {
     	Integer ans = 0;
     	Integer state = articleService.likeOrCancelLike(Integer.valueOf(userId), Integer.valueOf(articleId));
@@ -137,4 +145,28 @@ public class CommunityController {
 			e.printStackTrace();
 		}
     }
+    
+    @RequestMapping("/comment_article")
+    public void commentArticle(@RequestParam(name = "userId", required = true)String userId,
+    						    @RequestParam(name = "articleId", required = true)String articleId,
+    							@RequestParam(name = "articleContent", required = true)String articleContent,
+    							@RequestParam(name = "parentCommentId", required = false, defaultValue = "-1")String parentCommentId,
+    							HttpServletResponse response) throws IOException {
+    	String ans = aCFind.sensitiveFilter(articleContent);
+    	articleCommentServiceImpl.addArticleComment(Integer.valueOf(userId), Integer.valueOf(articleId), ans, Integer.valueOf(parentCommentId));
+    	response.getWriter().write(ans);
+    }
+    
+    @RequestMapping("/load_comment")
+    public void loadCommentByArticleId(@RequestParam(name = "articleId", required = true)String articleId,
+    		HttpServletResponse response) throws IOException {
+    	String ans = articleCommentServiceImpl.getAllComment(Integer.valueOf(articleId));
+    	response.getWriter().write(ans);
+    }
 }
+
+
+
+
+
+

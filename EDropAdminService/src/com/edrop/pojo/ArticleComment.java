@@ -10,6 +10,13 @@ public class ArticleComment {
 	private Timestamp commentDate;
 	private String commentContent;
 	private Integer parentCommentId;
+	private User user;
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public Integer getId() {
 		return id;
 	}
