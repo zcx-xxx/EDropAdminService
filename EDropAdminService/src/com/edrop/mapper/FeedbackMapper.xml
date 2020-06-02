@@ -30,6 +30,21 @@
 		insert into feedback(content, publish_time, is_readed, user_id, is_deleted)
 		values(#{content}, #{publishTime}, #{isReaded}, #{userId}, #{isDeleted})
 	</insert>
+<!-- 		public List<Feedback> selectDeletedFeedback(); -->
+<!-- 	// 还原已经删除的 -->
+<!-- 	public Integer updateDeletedToNoReaded(@Param("feedbackId")Integer feedbackId); -->
+	<!-- 查询已经删除的 -->
+	<select id="selectDeletedFeedback" resultMap="feedbackMap">
+		select * from feedback where is_deleted=1
+	</select>
+	<!-- 还原删除的 -->
+	<update id="updateDeletedToNoReaded">
+		update feedback set is_deleted=0, is_readed=0 where id=#{feedbackId}		
+	</update>
+	<!-- 根据不同的状态获取返回信息的数量 -->
+	<select id="selectFeedbackCountsByState" resultType="java.lang.Integer">
+		select count(*) from feedback where is_readed=#{isReaded} and is_deleted=#{isDeleted}
+	</select>
 </mapper>
 
 

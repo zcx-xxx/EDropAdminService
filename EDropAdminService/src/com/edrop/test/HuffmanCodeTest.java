@@ -17,17 +17,16 @@ public class HuffmanCodeTest {
 	
 	@Test
 	public void addArticleTest() {
-		Integer id = articleServiceImpl.addArticleTest("# 张晨旭\r\n" + 
-				"## 张晨旭\r\n" + 
-				"- 你还呀\r\n" + 
-				"- 我很好\r\n" + 
-				"- 哦哦，那就好");
+		Integer id = articleServiceImpl.addArticleTest("The scrcpy client necessarily connects to the device via adb. In particular, it executes the scrcpy server via adb shell to get shell permissions (to capture the video without asking and to inject events).\r\n" + 
+				"\r\n" + 
+				"If from your shell you can see your device via adb devices, then you could use scrcpy. Maybe you could adb connect to localhost. You could check #100 (comment), a project which adb-connects to an Android device from another Android device. It should work to connect to localhost too in theory.\r\n" + 
+				"");
 //		System.out.println(id);
 	}
 	
 	@Test
 	public void selectArticleTest() {
-		String ans = articleServiceImpl.selectArticleById(7);
+		String ans = articleServiceImpl.selectArticleById(14);
 		System.out.println(ans);
 	}
 }

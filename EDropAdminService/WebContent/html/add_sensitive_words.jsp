@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
-<base href="<%=basePath %>>" />
+<base href="<%=basePath %>" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="html/scripts/jquery/jquery-1.7.1.js"></script>
 <link href="html/style/authority/basic_layout.css" rel="stylesheet" type="text/css">

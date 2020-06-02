@@ -37,12 +37,48 @@ public class FeedbackController {
 	@ResponseBody
 	@RequestMapping("/get_feedback")
 	public String getAllFeedbackByIsReaded(@RequestParam(defaultValue = "0")String isReaded) {
-		List<Feedback> list = feedbackServiceImpl.getAllFeedbacks(Boolean.valueOf(isReaded));
+		System.out.println(isReaded);
+		List<Feedback> list = feedbackServiceImpl.getAllFeedbacks(Boolean.valueOf(isReaded.equals("1")));
 		Gson gson = new Gson();
 		String ans = gson.toJson(list);
 		System.out.println(ans);
 		return ans;
 	}
+	/**
+	 * 获得已经删除的反馈
+	 * @Title: getDeletedFeedback   
+	 * @Description: TODO(这里用一句话描述这个方法的作用)   
+	 * @param: @return      
+	 * @return: String      
+	 * @throws
+	 */
+	@ResponseBody
+	@RequestMapping("/get_deleted_feedback")
+	public String getDeletedFeedback() {
+		List<Feedback> list = feedbackServiceImpl.getDeletedFeedback();
+		Gson gson = new Gson();
+		String ans = gson.toJson(list);
+		System.out.println(ans);
+		return ans;
+	}
+	/**
+	 * 还原已经删除的
+	 * @Title: getDeletedFeedback   
+	 * @Description: TODO(这里用一句话描述这个方法的作用)   
+	 * @param: @return      
+	 * @return: String      
+	 * @throws
+	 */
+	@ResponseBody
+	@RequestMapping("/restore_deleted_feedback")
+	public String restoreDeletedFeedback(String feedbackId) {
+		feedbackServiceImpl.restoreDeletedFeedback(Integer.valueOf(feedbackId));
+		JSONObject json = new JSONObject();
+		json.put("state", "success");
+		return json.toString();
+	}
+	
+	
 	/**
 	 * 标记已读
 	 * @Title: markReaded   
@@ -51,10 +87,13 @@ public class FeedbackController {
 	 * @return: void      
 	 * @throws
 	 */
+	@ResponseBody
 	@RequestMapping("/mark_readed")
-	public void markReaded(Integer feedbackId) {
+	public String markReaded(Integer feedbackId) {
 		feedbackServiceImpl.markReaded(feedbackId);
-		return;
+		JSONObject json = new JSONObject();
+		json.put("state", "success");
+		return json.toString();
 	}
 	/**
 	 * 标记已删除
@@ -64,10 +103,13 @@ public class FeedbackController {
 	 * @return: void      
 	 * @throws
 	 */
+	@ResponseBody
 	@RequestMapping("/delete_readed")
-	public void deleteReaded(Integer feedbackId) {
+	public String deleteReaded(Integer feedbackId) {
 		feedbackServiceImpl.markDeleted(feedbackId);
-		return;
+		JSONObject json = new JSONObject();
+		json.put("state", "success");
+		return json.toString();
 	}
 	/**
 	 * @throws IOException 
@@ -95,5 +137,12 @@ public class FeedbackController {
 		JSONObject json = new JSONObject();
 		json.put("state", 1);
 		response.getWriter().print(json.toJSONString());
+	}
+	
+	@ResponseBody
+	@RequestMapping("/get_diff_feedback_counts")
+	public String getDiffFeedbackCounts() {
+		String ans = feedbackServiceImpl.getDiffFeedbackCounts();
+		return ans;
 	}
 }

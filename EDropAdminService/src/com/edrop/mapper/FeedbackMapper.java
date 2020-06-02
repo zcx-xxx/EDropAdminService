@@ -18,4 +18,11 @@ public interface FeedbackMapper {
 	public Integer addFeedback(@Param("content")String content, @Param("userId")Integer userId,
 			@Param("publishTime")Timestamp publishTime, @Param("isReaded")Boolean isReaded,
 			@Param("isDeleted")Boolean isDeleted);
+	// 查询已经删除的反馈
+	public List<Feedback> selectDeletedFeedback();
+	// 还原已经删除的
+	public Integer updateDeletedToNoReaded(@Param("feedbackId")Integer feedbackId);
+	// 获得指定状态信息的数目
+	public Integer selectFeedbackCountsByState(@Param("isReaded")Boolean isReaded,
+			@Param("isDeleted")Boolean isDeleted);
 }

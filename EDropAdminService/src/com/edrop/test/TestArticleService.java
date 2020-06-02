@@ -30,8 +30,8 @@ public class TestArticleService {
 	
 	@Test
 	public void selectContent() {
-		String ans = articleServiceImpl.selectArticleById(6);
-		System.out.println(ans);
+		String ans = articleServiceImpl.selectArticleById(12);
+		System.out.println("haha" + ans);
 	}
 	
 //	publi

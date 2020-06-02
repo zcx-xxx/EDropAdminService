@@ -42,6 +42,7 @@ public class HuffmanCodeUtil {
 	 * @throws UnsupportedEncodingException 
 	 */
 	public static String unZipFile(Map<Byte, String> huffmanCodes, byte[] huffmanBytes) {
+		HuffmanCodeUtil.huffmanCodes = huffmanCodes;
 		byte[] bytes = decode(huffmanCodes, huffmanBytes);
 		try {
 			return new String(bytes, "utf-8");
@@ -50,13 +51,20 @@ public class HuffmanCodeUtil {
 		}
 		return "";
 	}
+	
+	public static void clearData() {
+		HuffmanCodeUtil.huffmanCodes.clear();
+		
+	}
+	
 	/**
 	 * @param srcFile 你传入的希望压缩的文件的全路径
 	 * @param dstFile 我们压缩后将压缩文件放到哪个目录
 	 * @throws UnsupportedEncodingException 
 	 */
 	public static HuffmanCodeResult zipFile(String content) {
-		huffmanCodes.clear();
+//		HuffmanCodeUtil.huffmanCodes.clear();
+		clearData();
 		// 获取字节数组
 		byte[] b = null;
 		try {
@@ -68,7 +76,7 @@ public class HuffmanCodeUtil {
 		//直接对源文件压缩
 		byte[] huffmanBytes = huffmanZip(b);
 		// 封装将结果返回
-		return new HuffmanCodeUtil.HuffmanCodeResult(huffmanCodes, huffmanBytes);
+		return new HuffmanCodeUtil.HuffmanCodeResult(HuffmanCodeUtil.huffmanCodes, huffmanBytes);
 	}
 	
 	/**
