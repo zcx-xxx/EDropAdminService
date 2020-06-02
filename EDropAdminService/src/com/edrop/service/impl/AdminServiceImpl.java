@@ -54,6 +54,7 @@ public class AdminServiceImpl implements AdminService{
 		if (admin != null) {
 			state = "fail";
 		} else {       // 不存在添加
+			if (password == null || password.length() == 0) System.out.println("password exception!!!");
 			password = MD5Utils.MD5Encode(password);
 			adminMapper.insertAdmin(userName, password, new Timestamp(System.currentTimeMillis()), 
 					new Timestamp(System.currentTimeMillis()));

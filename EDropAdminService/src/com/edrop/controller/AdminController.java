@@ -73,4 +73,5 @@ public class AdminController {
 		String ans = gson.toJson(list);
 		return ans;
 	}
+	
 }

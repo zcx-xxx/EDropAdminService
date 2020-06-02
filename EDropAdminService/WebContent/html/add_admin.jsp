@@ -24,15 +24,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript">
 	$(function(){
 		$("#addBtn").click(function(){
-			var add_content = $("#sensitive_word").val();
+			var admin_name = $("#admin_name").val();
+			var admin_password = $("#admin_password").val();
 			
-			if (add_content == "" || add_content == null || add_content == undefined) {
-				info_prompt("添加内容不能为空！！！", 1500);
+			if (admin_name == "" || admin_name == null || admin_name == undefined) {
+				info_prompt("用户名不能为空！！！", 1500);
+			} else if (admin_password == "" || admin_password == null || admin_password == undefined) {
+				info_prompt("密码不能为空！！！", 1500);
 			} else {
 				$.ajax({
 					type: "POST",
-					url: "key_words/add_key_word",
-					data: "content=" + add_content,
+					url: "admin/add",
+					data: "userName=" + admin_name + "&password=" + admin_password,
 					dataType: "json",
 					success: function(msg){
 						if (msg.state == "success") {
@@ -137,9 +140,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="ui_content">
 		<div class="ui_text_indent">
 			<div id="box_border">
-				<div id="box_top">添加敏感词</div>
+				<div id="box_top">添加管理员</div>
 				<div id="box_center">
-					<span style="margin-left: 20px;">输入敏感词</span>&nbsp;&nbsp;<input type="text" style="width: 500px" id="sensitive_word" name="sensitive_word" class="ui_input_txt02" />
+					<span style="margin-left: 20px;">输入管理员姓名</span>&nbsp;&nbsp;<input type="text" style="width: =200px" id="admin_name" name="admin_name" class="ui_input_txt02" />
+					<span style="margin-left: 20px;">输入管理员密码</span>&nbsp;&nbsp;<input type="password" style="width: 200px" id="admin_password" name="admin_password" class="ui_input_txt02" />
 					<input type="button" value="添加" style="margin-left: 400px" class="ui_input_btn01" id="addBtn" /> 
 				</div>
 			</div>
