@@ -138,7 +138,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="ui_text_indent">
 			<div id="box_border">
 				<div id="box_top">添加敏感词</div>
-				<div id="box_center">
+				<div id="box_center" >
 					<span style="margin-left: 20px;">输入敏感词</span>&nbsp;&nbsp;<input type="text" style="width: 500px" id="sensitive_word" name="sensitive_word" class="ui_input_txt02" />
 					<input type="button" value="添加" style="margin-left: 400px" class="ui_input_btn01" id="addBtn" /> 
 				</div>

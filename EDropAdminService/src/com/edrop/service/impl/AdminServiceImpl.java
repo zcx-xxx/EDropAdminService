@@ -9,8 +9,11 @@ import org.springframework.stereotype.Service;
 
 import com.edrop.mapper.AdminMapper;
 import com.edrop.pojo.Admin;
+import com.edrop.pojo.User;
 import com.edrop.service.AdminService;
 import com.edrop.utils.MD5Utils;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 /**
  * admin service implement
@@ -68,5 +71,14 @@ public class AdminServiceImpl implements AdminService{
 		List<Admin> ans = adminMapper.selectAllAdminInfo();
 		return ans;
 	}
+	public PageInfo<Admin> getAllAdmin(String username,Integer page,Integer size){
+			
+			PageHelper.startPage(page,size);
+			
+			List<Admin> admins =  adminMapper.selectAllAdmin(username);
+			PageInfo<Admin> info = new PageInfo<Admin>(admins);
+			
+			return info;
+		}
 	
 }

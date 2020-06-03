@@ -25,4 +25,15 @@
 	<select id="selectAllAdminInfo" resultMap="adminMap">
 		select * from admin
 	</select>
+	
+		<select id="selectAllAdmin" resultMap="adminMap">
+		select *
+		from admin
+		<where>
+			<if test="username != '' and username != null">
+				and username like concat('%','${username}','%')
+			</if>
+		</where>
+		
+	</select>
 </mapper>

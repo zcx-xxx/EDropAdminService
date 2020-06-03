@@ -252,12 +252,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		            {"accessPath":"html/add_sensitive_words.jsp","checked":false,"delFlag":0,"parentID":34,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":35,"resourceName":"添加敏感词","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"article/load_article_list","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":45,"resourceName":"文章管理","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"html/show_user_place_order_address_info.jsp","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":46,"resourceName":"业务分析","resourceOrder":0,"resourceType":""},
-		            {"accessPath":"","checked":false,"delFlag":0,"parentID":30,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":47,"resourceName":"日活用户","resourceOrder":0,"resourceType":""},
-		            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":43,"resourceName":"推送信息","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"html/add_admin.jsp","checked":false,"delFlag":0,"parentID":34,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":36,"resourceName":"添加管理员","resourceOrder":0,"resourceType":""},
 		            {"accessPath":"html/feedback_list.jsp","checked":false,"delFlag":0,"parentID":3,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":32,"resourceName":"反馈处理","resourceOrder":0,"resourceType":""},
-		            {"accessPath":"","checked":false,"delFlag":0,"parentID":34,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":51,"resourceName":"管理员信息","resourceOrder":0,"resourceType":""},
-		            {"accessPath":"","checked":false,"delFlag":0,"parentID":55,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":29,"resourceName":"定时任务","resourceOrder":0,"resourceType":""}];
+		            {"accessPath":"admin/list","checked":false,"delFlag":0,"parentID":34,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":51,"resourceName":"管理员信息","resourceOrder":0,"resourceType":""}];
             // 如果返回数据不为空，加载"业务模块"目录
             if(data != null){
                 // 将返回的数据赋给zTree 

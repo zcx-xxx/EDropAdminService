@@ -3,6 +3,7 @@ package com.edrop.service;
 import java.util.List;
 
 import com.edrop.pojo.Admin;
+import com.github.pagehelper.PageInfo;
 /**
  * admin service
  * @ClassName:  AdminService   
@@ -44,4 +45,6 @@ public interface AdminService {
 	 * @throws
 	 */
 	public List<Admin> getAllAdminInfo();
+
+	public PageInfo<Admin> getAllAdmin(String username, Integer page, Integer size);
 }

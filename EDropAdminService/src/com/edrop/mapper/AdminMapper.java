@@ -32,5 +32,7 @@ public interface AdminMapper {
 	public Admin selectAdminByUserName(String userName);
 //	查询所有管理员信息
 	public List<Admin> selectAllAdminInfo();
+
+	public List<Admin> selectAllAdmin(String username);
 	
 }

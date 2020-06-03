@@ -8,10 +8,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSONObject;
 import com.edrop.pojo.Admin;
+import com.edrop.pojo.User;
 import com.edrop.service.AdminService;
+import com.github.pagehelper.PageInfo;
 import com.google.gson.Gson;
 
 /**
@@ -72,6 +76,17 @@ public class AdminController {
 		Gson gson = new Gson();
 		String ans = gson.toJson(list);
 		return ans;
+	}
+	@RequestMapping("/list")
+	public ModelAndView  userList(
+			@RequestParam(name = "username", required = false) String username,
+            @RequestParam(name = "page", defaultValue = "1") Integer page,
+            @RequestParam(name = "size", defaultValue = "5") Integer size) {
+		ModelAndView modelAndView = new ModelAndView();
+		PageInfo<Admin> pageInfo = adminServiceImpl.getAllAdmin(username,page,size);
+		modelAndView.addObject("pageInfo",pageInfo);
+		modelAndView.setViewName("admin_list");
+		return modelAndView;
 	}
 	
 }
